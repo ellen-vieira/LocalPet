@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
-      <!-- DA ONDE VEM A COR DA HEADER -->
+    <!-- ICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <!-- DA ONDE VEM A COR DA HEADER -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- ESTILO HEADER -->
     <style>
