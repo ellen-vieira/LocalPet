@@ -77,7 +77,7 @@
     <!-- LOGO -->
     <img class="mb-4" src="images/localpet.png" alt="" width="200px" height="200px">
     <!-- LOGIN -->
-    <h1 class="h3 mb-3 fw-normal">INSCREVA-SE</h1>
+    <h1 class="h3 mb-3 fw-normal">LOGIN</h1>
     <div class="form-floating">
       <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">EMAIL</label>
@@ -89,11 +89,11 @@
     <!-- CHECKBOX  -->
     <div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me"> LEMBRAR ME
+        <input type="checkbox" value="remember-me"> LEMBRAR-ME
       </label>
     </div>
     <!-- BOTÃO -->
-    <button class="w-100 btn btn-lg btn-primary" type="submit">LOGIN</button>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">ENTRAR</button>
     <!-- COPYRIGHT -->
     <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
   </form>
