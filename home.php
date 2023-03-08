@@ -9,7 +9,6 @@
     <!-- LINK BOOTSTRAP -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- ICON -->
     <link rel="icon" type="image/png" href="images/favicon.png"/>
     <!-- DA ONDE VEM A COR DA HEADER -->
@@ -68,9 +67,7 @@
       }
     </style>
   </head>
-  <body>
-  </head>
-<body>
+<body id="corpo">
 <!-- LINK DOS ICONS -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <!-- HOME -->
@@ -198,10 +195,12 @@
         </div>
       </div>
     </div>
+    <!-- BOTÃO -->
     <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Anterior</span>
     </button>
+    <!-- BOTÃO -->
     <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Próximo</span>
@@ -210,7 +209,6 @@
   <br> <br>
 
         <!-- 3 COLUNAS DEPOIS DO CARROSSEL -->
-
         <div class="container marketing">
         <div class="row">
           <div class="col-lg-4">
@@ -279,7 +277,7 @@
 
     <hr class="featurette-divider">
 
-    <!-- /FIM FEATURETTES -->
+    <!-- FIM FEATURETTES -->
 
   </div>
 
@@ -292,7 +290,6 @@
 </main>
 
     <!-- SCRIPT -->
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.lordicon.com/ritcuqlt.js%22%3E"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
 
