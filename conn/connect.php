@@ -1,7 +1,7 @@
 <?php 
 // DEFININDO
 $host = "localhost";
-$database = "";
+$database = "db_localpet";
 $user = "root";
 $pass = "";
 $charset = "utf8";

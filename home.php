@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -97,7 +97,7 @@
 </svg>
 <header>
     <!-- COR DA HEADER -->
-    <div class="px-3 py-2 text-bg-danger">
+    <div class="px-3 py-2 text-bg-danger rounded-bottom">
       <!-- CONTAINER HEADER -->
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -109,7 +109,7 @@
           <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
             <!-- HOME -->
             <li>
-              <a href="#" class="nav-link text-white">
+              <a href="home.php" class="nav-link text-white">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"/></svg>
                 Home
               </a>
@@ -172,34 +172,28 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+    <!-- BANNER 1 -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="images/Temp.jpg" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+        <img src="images/Banner.png" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
         <div class="container">
           <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">SAIBA MAIS</a></p>
           </div>
         </div>
       </div>
+      <!-- BANNER 2 -->
       <div class="carousel-item">
-      <img src="images/Temp1.jpg" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+      <img src="images/Banner2.png" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
         <div class="container">
           <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
           </div>
         </div>
       </div>
+      <!-- BANNER 3 -->
       <div class="carousel-item">
-      <img src="images/Temp.jpg" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
+      <img src="images/Banner3.png" alt="" width="100%" height="100%" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/>
         <div class="container">
           <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
           </div>
         </div>
       </div>
@@ -220,54 +214,30 @@
         <div class="container marketing">
         <div class="row">
           <div class="col-lg-4">
-            <img class="image" src="images/ongs.png" alt="ongs" width="100" height="100">
+            <img class="image" src="images/Icon.png" alt="ongs" width="80" height="80">
             <h2>ONGs</h2>
             <p> Conheça nosso espaço dedicado à ONGs. Se você for uma ONG/Protetor interessado em fazer parte dos nossos
                espaços, aqui poderá obter mais informações sobre como participar.</p>
                <br>
             <p><a class="btn btn-danger" href="#" role="button">SAIBA MAIS&raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
-            <img class="image" src="images/adote.png" alt="adote" width="100" height="100">
-            <h2>Adote</h2>
+            <img class="image" src="images/Icon2.png" alt="adote" width="80" height="80">
+            <h2>ADOTE</h2>
             <p> Conheça nosso espaço dedicado à adoção. Aqui você irá conhecer mais informçãoes sobre os cães e/ou gatos das 
               ONGs/protetores parceiros que buscam um novo lar.</p>
               <br>
             <p><a class="btn btn-danger" href="#" role="button">SAIBA MAIS &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
+          </div>
           <div class="col-lg-4">
-            <img class="image" src="images/perdidos.png" alt="perdidos" width="100" height="100">
-            <h2>Achados e Perdidos</h2> 
+            <img class="image" src="images/Icon3.png" alt="perdidos" width="80" height="80">
+            <h2>ACHADOS E PERDIDOS</h2> 
             <p>Conheça nosso espaço dedicado à animais perdidos e/ou que foram achados. Aqui você pode
               divulgar informações sobre o seu pet que foi perdido e/ou algum outro animalzinho que foi achado na rua e pode ser de alguém!
             </p>
             <p><a class="btn btn-danger" href="#" role="button">SAIBA MAIS &raquo;</a></p>
-          </div><!-- /.col-lg-4 -->
-        </div><!-- /.row -->
-
-  <!-- CONTAINER-->
-
-  <div class="container marketing">
-    <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-danger" href="#">VEJA MAIS &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-danger" href="#">VEJA MAIS &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-danger" href="#">VEJA MAIS &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
+          </div>
+        </div>
 
     <!-- INÍCIO FEATURETTES -->
 
@@ -311,7 +281,7 @@
 
     <!-- /FIM FEATURETTES -->
 
-  </div><!-- /.container -->
+  </div>
 
 
   <!-- RODAPÉ -->
