@@ -130,7 +130,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 0.62rem;
-    padding: 0 .5rem;
+    padding: 0.3rem;
 }
 
 .gender-input {
@@ -198,7 +198,7 @@ body {
         margin-top: 2rem;
     }
     .gender-group {
-        flex-direction: column;
+        flex-direction: row;
     }
     .gender-title h6 {
         margin: 0;
@@ -206,4 +206,141 @@ body {
     .gender-input {
         margin-top: 0.5rem;
     }
+}
+
+/* CSS FORMULÁRIO ADOÇÃO */
+
+.species-group {
+    display: flexbox;
+    justify-content: right;
+    margin-top: 0.62rem;
+    padding: 0 .5rem;
+}
+
+.species-input {
+    display: flex;
+    align-items: center;
+}
+
+.species-input input {
+    margin-right: 0.35rem;
+}
+
+.species-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .species-inputs {
+        margin-top: 2rem;
+    }
+    .species-group {
+        flex-direction: column;
+    }
+    .species-title h6 {
+        margin: 0;
+    }
+    .species-input {
+        margin-top: 0.5rem;
+    }
+}
+
+.input-box label,
+.species-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+.voltar-button {
+    display: flex;
+    align-items: center;
+}
+
+.voltar-button button {
+    border: none;
+    background-color: #2a1e5c;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.voltar-button button:hover {
+    background-color: #2a1e5c;
+}
+
+.voltar-button button a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+.size-group {
+    display: flexbox;
+    justify-content: right;
+    margin-top: 0.62rem;
+    padding: 0 .5rem;
+}
+
+.size-input {
+    display: flex;
+    align-items: center;
+}
+
+.size-input input {
+    margin-right: 0.35rem;
+}
+
+.size-input label {
+    font-size: 0.81rem;
+    font-weight: 600;
+    color: #000000c0;
+}
+
+@media screen and (max-width: 1064px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+    .input-group {
+        flex-direction: column;
+        z-index: 5;
+        padding-right: 5rem;
+        max-height: 10rem;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+    }
+    .size-inputs {
+        margin-top: 2rem;
+    }
+    .size-group {
+        flex-direction: column;
+    }
+    .size-title h6 {
+        margin: 0;
+    }
+    .size-input {
+        margin-top: 0.5rem;
+    }
+}
+
+.input-box label,
+.size-title h6 {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000c0;
 }

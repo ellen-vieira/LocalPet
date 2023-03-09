@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Formulário</title>
 </head>
-
 <body>
+    <!-- DIV IMAGEM -->
     <div class="container">
         <div class="form-image">
             <img src="images/Adote.jpg" alt="">
@@ -18,10 +18,10 @@
             <form action="#">
                 <div class="form-header">
                     <div class="title">
-                        <h1>Cadastre-se</h1>
+                        <h1>Formulário do Usuário</h1>
                     </div>
                     <div class="login-button">
-                        <button><a href="#">Entrar</a></button>
+                        <button><a href="#">Voltar</a></button>
                     </div>
                 </div>
 
@@ -55,9 +55,9 @@
                         <label for="confirmPassword">Confirme sua Senha</label>
                         <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
                     </div>
-
                 </div>
 
+                    <!-- IMPUTS -->
                 <div class="gender-inputs">
                     <div class="gender-title">
                         <h6>Gênero</h6>
