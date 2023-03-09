@@ -12,7 +12,7 @@
     <!-- DIV IMAGEM -->
     <div class="container">
         <div class="form-image">
-            <img src="images/Adote.jpg" alt="">
+            <img src="images/Usuario.png" alt="">
         </div>
         <div class="form">
             <form action="#">
