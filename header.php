@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -117,7 +116,7 @@
                         </li>
                         <!-- SOBRE -->
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="sobre.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#speedometer2" />
                                 </svg>
@@ -126,7 +125,7 @@
                         </li>
                         <!-- ONGS -->
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="ongs.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#table" />
                                 </svg>
@@ -135,7 +134,7 @@
                         </li>
                         <!-- ADOÇÃO -->
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="adocao.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#grid" />
                                 </svg>
@@ -144,21 +143,21 @@
                         </li>
                         <!-- ACHADOS E PERDIDOS -->
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="a&p.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#A&P" />
                                 </svg>
                                 A&P
                             </a>
                         </li>
-                        <!-- ADMIN -->
+                        <!-- LOGIN -->
                         <li>
                             <a href="#" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#people-circle" />
                                 </svg>
                                 <span class="glyphicon glyphicon-user"></span>
-                                Admin
+                                Login
                             </a>
                         </li>
                     </ul>
@@ -173,7 +172,7 @@
                 </form>
                 <!-- LOGIN -->
                 <div class="text-end">
-                    <button type="button" class="btn btn-light text-dark me-2">Login</button>
+                    <!-- <button type="button" class="btn btn-light text-dark me-2">Login</button> -->
                     <button type="button" class="btn btn-danger">Cadastre-se</button>
                 </div>
             </div>
