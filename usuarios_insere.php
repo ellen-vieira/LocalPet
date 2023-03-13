@@ -6,18 +6,16 @@ if ($_POST) {
 
     // Receber os dados do formulário
     // Organizar os campos na mesma ordem
-    $id = $_POST['id'];
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $senha = $_POST['senha'];
 
     // Consulta SQL para inserção de dados
     $insertSQL = "INSERT INTO usuarios
-                    ( id, nome, email, senha)
+                    ( nome, email, senha)
                     VALUES
-                    (0, '$nome', '$email' , '$senha')
+                    ('$nome', '$email' , '$senha')
                     ";
-                    var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
 ?>
@@ -67,7 +65,7 @@ if ($_POST) {
                 </div>
 
                 <div class="continue-button">
-                    <button type="submit">Entrar</button>
+                    <button type="submit" class="btn btn-danger btn-block">Entrar</button>
                 </div>
             </form>
         </div>
