@@ -99,7 +99,7 @@
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <!-- LOGO -->
                     <img src="images/localpet.png" alt="Local Pet" height="100px" width="100px">
-                    <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <a href="home.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap" />
                         </svg>
@@ -152,7 +152,7 @@
                         </li>
                         <!-- LOGIN -->
                         <li>
-                            <a href="#" class="nav-link text-white">
+                            <a href="login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#people-circle" />
                                 </svg>
@@ -173,7 +173,7 @@
                 <!-- LOGIN -->
                 <div class="text-end">
                     <!-- <button type="button" class="btn btn-light text-dark me-2">Login</button> -->
-                    <button type="button" class="btn btn-danger">Cadastre-se</button>
+                    <button type="button" class="btn btn-danger"><a href="usuarios_insere.php">Cadastre-se</a></button>
                 </div>
             </div>
         </div>

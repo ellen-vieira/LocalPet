@@ -141,7 +141,7 @@
           <p> Conheça nosso espaço dedicado à adoção. Aqui você irá conhecer mais informçãoes sobre os cães e/ou gatos das
             ONGs/protetores parceiros que buscam um novo lar.</p>
           <br>
-          <p><a class="btn btn-danger" href="adote.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="adocao.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="image" src="images/Icon3.png" alt="perdidos" width="80" height="80">
