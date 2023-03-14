@@ -1,5 +1,4 @@
 <?php
-include("conn/connect.php");
 // INICIA A VERIFICAÇÃO DO LOGIN
 if ($_POST) {
   $email = $_POST['email_usuario'];
@@ -15,7 +14,8 @@ if ($_POST) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/adminlogin.css">
+  <link rel="stylesheet" href="css/adminlogin.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <title>Login</title>
 </head>
 
@@ -28,7 +28,7 @@ if ($_POST) {
     <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
       <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
         <!-- LOGO -->
-        <img class="ms-4" src="../images/localpet.png" alt="" width="200" height="200">
+        <img class="ms-4" src="images/localpet.png" alt="" width="200" height="200">
       </div>
       <div class="formbg-outer">
         <div class="formbg">
@@ -47,7 +47,7 @@ if ($_POST) {
                     <a href="#">Esqueceu sua senha?</a>
                   </div>
                 </div>
-                <input type="senha_usuario" name="senha_usuario">
+                <input type="password" name="senha_usuario">
               </div>
               <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 <label for="checkbox">
@@ -61,7 +61,7 @@ if ($_POST) {
           </div>
         </div>
         <div class="footer-link padding-top--24">
-          <span>Não tem uma conta? <a href="../usuario.php">Inscrever-se</a></span>
+          <span>Não tem uma conta? <a href="usuarios_insere.php">Inscrever-se</a></span>
           <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
             <span><a href="#">©Meraki</a> </span>
             <span><a href="#">Contatos</a></span>

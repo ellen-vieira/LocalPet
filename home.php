@@ -149,7 +149,7 @@
           <p>Conheça nosso espaço dedicado à animais perdidos e/ou que foram achados. Aqui você pode
             divulgar informações sobre o seu pet que foi perdido e/ou algum outro animalzinho que foi achado na rua e pode ser de alguém!
           </p>
-          <p><a class="btn btn-danger" href="A&P.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="a&p.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
       </div>
 
@@ -158,6 +158,7 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
+      <a name = "carousel">&nbsp;</a>
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
           <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
