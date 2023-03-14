@@ -44,7 +44,8 @@
         display: inline-block;
         visibility: visible;
         border: 2px solid white;
-    } */
+       } */
+       
     </style>
 </head>
 <body>
