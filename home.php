@@ -158,6 +158,7 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
+      <a name = "carousel">&nbsp;</a>
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
           <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
