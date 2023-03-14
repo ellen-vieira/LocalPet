@@ -149,7 +149,7 @@
           <p>Conheça nosso espaço dedicado à animais perdidos e/ou que foram achados. Aqui você pode
             divulgar informações sobre o seu pet que foi perdido e/ou algum outro animalzinho que foi achado na rua e pode ser de alguém!
           </p>
-          <p><a class="btn btn-danger" href="A&P.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="a&p.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
       </div>
 
