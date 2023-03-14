@@ -152,7 +152,7 @@
                         </li>
                         <!-- LOGIN -->
                         <li>
-                            <a href="login.php" class="nav-link text-white">
+                            <a href="admin/login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#people-circle" />
                                 </svg>
@@ -172,8 +172,7 @@
                 </form>
                 <!-- LOGIN -->
                 <div class="text-end">
-                    <!-- <button type="button" class="btn btn-light text-dark me-2">Login</button> -->
-                    <button type="button" class="btn btn-danger"><a href="usuarios_insere.php">Cadastre-se</a></button>
+                    <a href="usuarios_insere.php" type="submit" class="btn btn-danger btn-block">Cadastre-se</a>
                 </div>
             </div>
         </div>
