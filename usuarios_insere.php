@@ -16,7 +16,6 @@ if ($_POST) {
                     VALUES
                     ('$nome', '$email' , '$senha')
                     ";
-                    var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
 ?>
@@ -33,14 +32,14 @@ if ($_POST) {
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <?php include 'header.php'; ?>
-<div>
+<body>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
                 <h4>Cadastre-se</h4>
             </div>
             <div class="container">
-                <form id="cadastro">
+                <form id="cadastro" method="post">
                     <!-- NOME -->
                     <div class="mb-4">
                         <div>
@@ -68,5 +67,5 @@ if ($_POST) {
             </div>
         </div>
     </section>
-</div>
+</body>
 </html>
