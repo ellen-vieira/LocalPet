@@ -1,164 +1,146 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <!-- TITULO NAV -->
-    <title>Formulário de Adoção - ONG</title>
-     <!-- ICON -->
-  <link rel="icon" type="image/png" href="images/favicon.png" />
-    <style>
-        #fundo{
-            background-color: rgb(255, 145, 77);
-            ;
-        }
+<?php
+// INCLUIR  O ARQUIVO E FAZER A CONEXÃO
+include('conn/connect.php');
 
-        #btn-violet{
-            color: #2a1e5c;
-        }
+if ($_POST) {
 
-        /* input[type='radio']:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #d1d3d1;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-        }
+    // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
+    if (isset($_POST['enviar'])) {
+        $nome_img   =   $_FILES['imganimal_adocao']['name'];
+        $tmp_img    =   $_FILES['imganimal_adocao']['tmp_name'];
+        $dir_img    =   "../images/" . $nome_img;
+        move_uploaded_file($tmp_img, $dir_img);
+    };
 
-        input[type='radio']:checked:after {
-        width: 15px;
-        height: 15px;
-        border-radius: 15px;
-        top: -2px;
-        left: -1px;
-        position: relative;
-        background-color: #2a1e5c;
-        content: '';
-        display: inline-block;
-        visibility: visible;
-        border: 2px solid white;
-       } */
-       
-    </style>
+    // RECEBER OS DADOS DO FORMULÁRIO
+    // ORGANIZAR OS CAMPOS NA MESMA ORDEM
+    $nome = $_POST['nome'];
+    $especie = $_POST['especie']; //TEM OUTRA TABELA
+    $raca = $_POST['raca']; //TEM OUTRA TABELA
+    $sexo = $_POST['sexo'];
+    $porte = $_POST['porte'];
+    $idade = $_POST['idade'];
+    $caracteristicas = $_POST['caracteristicas'];
+    $enfermidades = $_POST['enfermidades'];
+    $medicacao = $_POST['medicacao'];
+    $vacinas = $_POST['vacinas'];
+    $comportamento = $_POST['comportamento'];
+    $imganimal_adocao = $_FILES['imganimal_adocao']['name'];
+    
+    // CONSULTA SQL PARA INSERÇÃO DE DADOS
+    $insertSQL = "INSERT INTO animais
+                    ( nome, especie, raca, sexo, porte, idade, caracteristicas,
+                    enfermidades, medicacao, vacinas, comportamento, imganimal_adocao)
+                    VALUES
+                    ('$nome', '$especie' , '$raca', '$sexo', '$porte', '$idade', '$caracteristicas',
+                    '$enfermidades', '$medicacao', '$vacinas', '$comportamento', '$imganimal_adocao' )
+                    ";
+    $resultado = $conn->query($insertSQL);
+}
+?>
+
+ <!DOCTYPE html>
+ <html lang="pt-br">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Formulario de Adoção - ONG</title>
+     <!-- LINKS BOOTSTRAP -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- ICON -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
-<body>
-      
-<div class="container px-5 my-7" id="fundo">
-    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-        <!-- TITULO -->
-      <div class="title text-violet">
-         <h4>Formulário de Adoção - ONG</h4>
-     </div>
-     <!-- RADIUS -->
-     <div class="mb-3">
-            <label class="form-label d-block">Espécie</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="gato" type="radio" name="especie" data-sb-validations="required" />
-                <label class="form-check-label" for="gato">Gato</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="cachorro" type="radio" name="especie" data-sb-validations="required" />
-                <label class="form-check-label" for="cachorro">Cachorro</label>
-            </div>
-            <div class="invalid-feedback" data-sb-feedback="porte:required">Preencha uma das opções.</div>
-        </div>
-       <!-- NOME -->
-        <div class="mb-3">
-            <label class="form-label" for="nomeDoAnimal">Nome do animal</label>
-            <input class="form-control" id="nomeDoAnimal" type="text" placeholder="Digite o nome do animal" data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="nomeDoAnimal:required">Nome do animal é obrigatório.</div>
-        </div>
-        <!-- RAÇA -->
-        <div class="mb-3">
-            <label class="form-label" for="racaDoAnimal">Raça do animal</label>
-            <input class="form-control" id="racaDoAnimal" type="text" placeholder="Digite a raça do animal" data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="racaDoAnimal:required">Raça do animal é obrigatório.</div>
-        </div>
-        <!-- SEXO -->
-        <div class="mb-3">
-            <label class="form-label d-block">Sexo</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="macho" type="radio" name="sexo" data-sb-validations="required" />
-                <label class="form-check-label" for="macho">Macho</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="femea" type="radio" name="sexo" data-sb-validations="required" />
-                <label class="form-check-label" for="femea">Fêmea</label>
-            </div>
-            <div class="invalid-feedback" data-sb-feedback="sexo:required">Preencha uma das opções.</div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label d-block">Porte</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="pequeno" type="radio" name="porte" data-sb-validations="required" />
-                <label class="form-check-label" for="pequeno">Pequeno</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="medio" type="radio" name="porte" data-sb-validations="required" />
-                <label class="form-check-label" for="medio">Médio</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="grande" type="radio" name="porte" data-sb-validations="required" />
-                <label class="form-check-label" for="grande">Grande</label>
-            </div>
-            <div class="invalid-feedback" data-sb-feedback="porte:required">Preencha uma das opções.</div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label d-block">Idade</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="filhote" type="radio" name="idade" data-sb-validations="required" />
-                <label class="form-check-label" for="filhote">Filhote</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="adulto" type="radio" name="idade" data-sb-validations="required" />
-                <label class="form-check-label" for="adulto">Adulto</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" id="idoso" type="radio" name="idade" data-sb-validations="required" />
-                <label class="form-check-label" for="idoso">Idoso</label>
-            </div>
-            <div class="invalid-feedback" data-sb-feedback="porte:required">Preencha uma das opções.</div>
-        </div>
-       
-        <div class="mb-3">
-            <label class="form-label" for="caracteristicasFisicas">Características físicas</label>
-            <input class="form-control" id="caracteristicasFisicas" type="text" placeholder="Cor do pelo e olhos, manchas, etc. " data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="caracteristicasFisicas:required">Características físicas é obrigatório.</div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="possuiProblemaDeSaudeEOuDeficiencia"> Possui problema de saúde e/ou deficiência?</label>
-            <input class="form-control" id="possuiProblemaDeSaudeEOuDeficiencia" type="text" placeholder="Digite quais se houver" data-sb-validations="" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="tomaAlgumTipoDeMedicacao">Toma algum tipo de medicação?</label>
-            <input class="form-control" id="tomaAlgumTipoDeMedicacao" type="text" placeholder="Digite quais se houver" data-sb-validations="" />
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="vacinasRecebidas">Vacinas recebidas</label>
-            <input class="form-control" id="vacinasRecebidas" type="text" placeholder="Vacinas recebidas" data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="vacinasRecebidas:required">Vacinas recebidas é obrigatório</div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="comportamentoHabitosPersonalidadeEtc">Comportamento</label>
-            <input class="form-control" id="comportamentoHabitosPersonalidadeEtc" type="text" placeholder="Hábitos, personalidade, etc" data-sb-validations="required" />
-            <div class="invalid-feedback" data-sb-feedback="comportamentoHabitosPersonalidadeEtc:required">Comportamento é obrigatório.</div>
-        </div>
-       
-        <div class="d-grid">
-            <button class="btn btn-lg disabled" id="btn-violet" type="submit">Enviar</button>
-        </div>
-    </form>
-</div>
-<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-              
-          
-</body>
-</html> 
+ <?php include 'header.php'; ?>
+ <body>
+     <section class="d-flex justify-content-center align-items-center">
+         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
+             <div class="mb-4 d-flex justify-content-start align-items-center">
+                <!-- TÍTULO -->
+                 <h4>Formulario de Adoção - ONG</h4>
+             </div>
+             <div class="mb-1">
+                 <form id="formulario" method="post">
+                     <div class="mb-4">
+                         <!-- NOME -->
+                         <div>
+                             <label for="nome">Nome:</label>
+                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do animal" required>
+                         </div>
+                     </div>
+                     <!-- ESPECIE -->
+                     <div class="mb-4">
+                         <label for="especie">Espécie:</label><br>
+                         <input type="radio" class="form-check-input" name="especie" value="gato"> Gato
+                         <input type="radio" class="form-check-input" name="especie" value="cachorro"> Cachorro
+                     </div>
+                     <!-- RAÇA -->
+                     <div class="mb-4">
+                         <label for="raca">Raça:</label>
+                         <input type="text" class="form-control" name="raca" id="raca" placeholder="Digite a raça do animal" required>
+                     </div>
+                     <!-- SEXO -->
+                     <div class="mb-4">
+                         <label for="sexo">Sexo:</label><br>
+                         <input type="radio" class="form-check-input" name="sexo" value="macho"> Macho
+                         <input type="radio" class="form-check-input" name="sexo" value="femea"> Fêmea
+                     </div>
+                     <!-- PORTE -->
+                     <div class="mb-4">
+                         <label for="porte">Porte:</label><br>
+                         <input type="radio" class="form-check-input" name="porte" value="pequeno"> Pequeno
+                         <input type="radio" class="form-check-input" name="porte" value="medio"> Médio
+                         <input type="radio" class="form-check-input" name="porte" value="grande"> Grande
+                     </div>
+                     <!-- IDADE -->
+                     <div class="mb-4">
+                         <label for="idade">Idade:</label><br>
+                         <input type="radio" class="form-check-input" name="idade" value="pequeno"> Filhote
+                         <input type="radio" class="form-check-input" name="idade" value="medio"> Adulto
+                         <input type="radio" class="form-check-input" name="idade" value="grande"> Idoso
+                     </div>
+                     <!-- CARACT. FÍSICAS -->
+                     <div class="mb-4">
+                         <label for="caracteristicas" required>Características Físicas:</label>
+                         <textarea name="caracteristicas" id="caracteristicas" class="form-control" placeholder="Ex: manchas, cor do pelo. cor dos olhos, etc."></textarea>
+                     </div>
+                     <!-- SAÚDE -->
+                     <div class="mb-4">
+                         <label for="enfermidades">Possui algum problema de saúde e/ou deficiência?</label>
+                         <textarea name="enfermidades" id="enfermidades" class="form-control" placeholder="Digite qual se houver"></textarea>
+                     </div>
+                     <!-- MEDICAÇÃO -->
+                     <div class="mb-4">
+                         <label for="medicacao">Toma algum tipo de medicação?</label>
+                         <input type="text" class="form-control" name="medicacao" id="medicacao" placeholder="Digite qual se houver" required>
+                     </div>
+                     <!-- VACINAS -->
+                     <div class="mb-4">
+                         <label for="vacinas">Vacinas recebidas:</label>
+                         <input type="text" class="form-control" name="vacinas" id="medicacao" placeholder="Digite qual se houver" required>
+                     </div>
+                     <!-- COMPORTAMENTO -->
+                     <div class="mb-4">
+                         <label for="comportamento" required>Comportamento:</label>
+                         <textarea name="comportamento" id="comportamento" class="form-control" placeholder="Ex: personalidade, hábitos, preferências, etc."></textarea>
+                     </div>
+                     <!-- IMAGEM -->
+                     <div class="mb-4">
+                        <label for="imganimal_adocao" class="form-label">Imagem do animal:</label>
+                        <input class="form-control" type="file" id="imganimal_adocao">
+                     </div>
+                     <!-- BOTÃO -->
+                     <div class="mb-2">
+                         <button type="submit" id="enviar" class="col-12 btn btn-danger justify-content-between ">
+                             <span>Enviar</span>
+                         </button>
+                     </div>
+                 </form>
+             </div>
+         </div>
+     </section>
+ </body>
 
+ </html>
