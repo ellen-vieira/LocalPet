@@ -48,10 +48,11 @@ if ($_POST) {
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
+                <!-- TITULO -->
                 <h4>Cadastrar ONGs</h4>
             </div>
             <div class="mb-1">
-                <form id="cadastro">
+                <form id="cadastro" method="post">
                     <!-- NOME -->
                     <div class="mb-4">
                         <div>
@@ -76,8 +77,8 @@ if ($_POST) {
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">
-                        <label for="imagem" class="form-label">Imagem da sua ONG:</label>
-                        <input class="form-control" type="file" id="imagem">
+                        <label for="imagem_ong" class="form-label">Imagem da sua ONG:</label>
+                        <input class="form-control" type="file" id="imagem_ong">
                     </div>
                     <!-- BOTÃO -->
                     <div class="mb-2">
