@@ -3,11 +3,13 @@
 include('conn/connect.php');
 
 if ($_POST) {
+    print_r($_POST);
+    print_r($_FILES);
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
     if (isset($_POST['enviar'])) {
-        $nome_img   =   $_FILES['imganimal_adocao']['name'];
-        $tmp_img    =   $_FILES['imganimal_adocao']['tmp_name'];
+        $nome_img   =   $_FILES['imgadocao']['name'];
+        $tmp_img    =   $_FILES['imgadocao']['tmp_name'];
         $dir_img    =   "../images/" . $nome_img;
         move_uploaded_file($tmp_img, $dir_img);
     };
@@ -15,26 +17,27 @@ if ($_POST) {
     // RECEBER OS DADOS DO FORMULÁRIO
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
-    $especie = $_POST['especie']; //TEM OUTRA TABELA
-    $raca = $_POST['raca']; //TEM OUTRA TABELA
+    $especie = $_POST['especie'];
+    $raca = $_POST['raca'];
     $sexo = $_POST['sexo'];
     $porte = $_POST['porte'];
     $idade = $_POST['idade'];
-    $caracteristicas = $_POST['caracteristicas'];
+    $descricao = $_POST['descricao'];
     $enfermidades = $_POST['enfermidades'];
-    $medicacao = $_POST['medicacao'];
+    $medicamentos = $_POST['medicamentos'];
     $vacinas = $_POST['vacinas'];
     $comportamento = $_POST['comportamento'];
-    $imganimal_adocao = $_FILES['imganimal_adocao']['name'];
+    $imgadocao = $_FILES['imgadocao']['name'];
     
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
-                    ( nome, especie, raca, sexo, porte, idade, caracteristicas,
-                    enfermidades, medicacao, vacinas, comportamento, imganimal_adocao)
+                    ( nome, especie, raca, sexo, porte, idade, descricao,
+                    enfermidades, medicamentos, vacinas, comportamento, imgadocao)
                     VALUES
-                    ('$nome', '$especie' , '$raca', '$sexo', '$porte', '$idade', '$caracteristicas',
-                    '$enfermidades', '$medicacao', '$vacinas', '$comportamento', '$imganimal_adocao' )
-                    ";
+                    ('$nome', '$especie' , '$raca', '$sexo', '$porte', '$idade', '$descricao',
+                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imgadocao' )
+                    "; 
+                    var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
 ?>
@@ -97,14 +100,14 @@ if ($_POST) {
                      <!-- IDADE -->
                      <div class="mb-4">
                          <label for="idade">Idade:</label><br>
-                         <input type="radio" class="form-check-input" name="idade" value="pequeno"> Filhote
-                         <input type="radio" class="form-check-input" name="idade" value="medio"> Adulto
-                         <input type="radio" class="form-check-input" name="idade" value="grande"> Idoso
+                         <input type="radio" class="form-check-input" name="idade" value="filhote"> Filhote
+                         <input type="radio" class="form-check-input" name="idade" value="adulto"> Adulto
+                         <input type="radio" class="form-check-input" name="idade" value="idoso"> Idoso
                      </div>
                      <!-- CARACT. FÍSICAS -->
                      <div class="mb-4">
-                         <label for="caracteristicas" required>Características Físicas:</label>
-                         <textarea name="caracteristicas" id="caracteristicas" class="form-control" placeholder="Ex: manchas, cor do pelo. cor dos olhos, etc."></textarea>
+                         <label for="descricao" required>Características Físicas:</label>
+                         <textarea name="descricao" id="descricao" class="form-control" placeholder="Ex: manchas, cor do pelo. cor dos olhos, etc."></textarea>
                      </div>
                      <!-- SAÚDE -->
                      <div class="mb-4">
@@ -113,8 +116,8 @@ if ($_POST) {
                      </div>
                      <!-- MEDICAÇÃO -->
                      <div class="mb-4">
-                         <label for="medicacao">Toma algum tipo de medicação?</label>
-                         <input type="text" class="form-control" name="medicacao" id="medicacao" placeholder="Digite qual se houver" required>
+                         <label for="medicamentos">Toma algum tipo de medicação?</label>
+                         <input type="text" class="form-control" name="medicamentos" id="medicamentos" placeholder="Digite qual se houver" required>
                      </div>
                      <!-- VACINAS -->
                      <div class="mb-4">
@@ -128,9 +131,11 @@ if ($_POST) {
                      </div>
                      <!-- IMAGEM -->
                      <div class="mb-4">
-                        <label for="imganimal_adocao" class="form-label">Imagem do animal:</label>
-                        <input class="form-control" type="file" id="imganimal_adocao">
-                     </div>
+                        <label for="imgadocao" class="form-label">Imagem do animal:</label>
+                        <input class="form-control" type="file" id="imgadocao" name="imgadocao" accept="images/*">
+                     <img src="" alt="" name="imagem" id="imagem" class="img-responsive">
+                   
+                    </div>
                      <!-- BOTÃO -->
                      <div class="mb-2">
                          <button type="submit" id="enviar" class="col-12 btn btn-danger justify-content-between ">
@@ -141,6 +146,38 @@ if ($_POST) {
              </div>
          </div>
      </section>
+
+<!-- Script para a imagem -->
+<script>
+        document.getElementById("imgadocao").onchange = function() {
+            var reader = new FileReader();
+            if (this.files[0].size > 528385) {
+                alert("A imagem deve ter no máximo 500Kb");
+                $("#imagem").attr("src", "blank");
+                $("#imagem").hide();
+                $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
+                $('#imgadocao').unwrap();
+                return false;
+            };
+            // if (this.files[0].type.indexOf("images") == -1) {
+            //     alert("Formato inválido, escolha uma imagem!");
+            //     $("#imagem").attr("src", "blank");
+            //     $("#imagem").hide();
+            //     $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
+            //     $('#imgadocao').unwrap();
+            //     return false;
+            // };
+            reader.onload = function(e) {
+                // obter dados carregados e renderizar miniatura.
+                document.getElementById("imagem").src = e.target.result;
+                $("#imagem").show();
+            };
+            // leia o arquivo de imagem como um URL de dados.
+            reader.readAsDataURL(this.files[0]);
+        };
+    </script>
+
+
  </body>
 
  </html>
