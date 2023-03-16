@@ -18,30 +18,12 @@ CREATE SCHEMA IF NOT EXISTS `db_localpet` DEFAULT CHARACTER SET utf8mb4 ;
 USE `db_localpet` ;
 
 -- -----------------------------------------------------
--- Table `db_localpet`.`especie`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `db_localpet`.`especie` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(30) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
 -- Table `db_localpet`.`raca`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_localpet`.`raca` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `raca` VARCHAR(45) NOT NULL,
-  `especie_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_raca_especie1_idx` (`especie_id` ASC) ,
-  CONSTRAINT `fk_raca_especie1`
-    FOREIGN KEY (`especie_id`)
-    REFERENCES `db_localpet`.`especie` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  `nome` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
