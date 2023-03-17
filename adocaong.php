@@ -42,7 +42,7 @@ if ($_POST) {
 }
 
 // SELECIONAR OS DADOS DA CHAVE ESTRANGEIRA
-$consulta_fk    =   "SELECT * FROM raca  ORDER BY nome ASC ";
+$consulta_fk    =   "SELECT * FROM raca ORDER BY nome ASC ";
 $lista_fk       =   $conn->query($consulta_fk);
 $row_fk         =   $lista_fk->fetch_assoc();
 $totalRows_fk   =   ($lista_fk)->num_rows;
@@ -93,7 +93,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
-                                <option value="<?php echo $row_fk['nome']; ?>">
+                                <option value="<?php echo $row_fk['id']; ?>">
                                     <?php echo $row_fk['nome']; ?>
                                 </option>
                             <?php } while ($row_fk = $lista_fk->fetch_assoc());

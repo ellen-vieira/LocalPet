@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`raca` (
   `nome` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -34,17 +35,18 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE IF NOT EXISTS `db_localpet`.`animais` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NULL DEFAULT NULL,
+  `especie` VARCHAR(100) NOT NULL,
+  `raca_id` INT(11) NOT NULL,
   `sexo` VARCHAR(25) NULL DEFAULT NULL,
-  `descricao` VARCHAR(255) NOT NULL,
-  `idade` VARCHAR(45) NOT NULL,
   `porte` VARCHAR(45) NOT NULL,
+  `idade` VARCHAR(45) NOT NULL,
+  `descricao` VARCHAR(255) NOT NULL,
   `enfermidades` VARCHAR(100) NULL DEFAULT NULL,
   `medicamentos` VARCHAR(100) NULL DEFAULT NULL,
   `vacinas` VARCHAR(45) NULL DEFAULT NULL,
   `comportamento` VARCHAR(45) NULL DEFAULT NULL,
   `imagem_animal` VARCHAR(45) NOT NULL,
   `ativo` BIT(1) NOT NULL DEFAULT b'1',
-  `raca_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_animais_raca1_idx` (`raca_id` ASC) ,
   CONSTRAINT `fk_animais_raca1`
