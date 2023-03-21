@@ -1,9 +1,10 @@
 <?php
+include "conn/connect.php";
 // INICIA A VERIFICAÇÃO DO LOGIN
 if ($_POST) {
   $email = $_POST['email_usuario'];
   $senha = $_POST['senha_usuario'];
-  $emailRes = $conn->query("select * from usuarios where email = '$email' and senha = md5('$senha')");
+  $emailRes = $conn->query("select * from usuarios where email = '$email' and senha = '$senha' ");
   $rowNome = $emailRes->fetch_assoc();
   $numRow = mysqli_num_rows($emailRes);
 }
@@ -33,26 +34,24 @@ if ($_POST) {
       <div class="formbg-outer">
         <div class="formbg">
           <div class="formbg-inner padding-horizontal--48">
-            <span class="padding-bottom--15">Faça login em sua conta
+            <span class="padding-bottom--15">Faça seu login
             </span>
-            <form id="stripe-login">
+            <form id="form_login" action="login.php" name="form_login" method="POST" enctype="multipart/form-data">
+              <!-- EMAIL -->
               <div class="field padding-bottom--24">
                 <label for="email_usuario">Email</label>
                 <input type="email_usuario" name="email_usuario">
               </div>
+              <!-- SENHA -->
               <div class="field padding-bottom--24">
                 <div class="grid--50-50">
                   <label for="senha_usuario">Senha</label>
                   <div class="reset-pass">
-                    <a href="#">Esqueceu sua senha?</a>
                   </div>
                 </div>
                 <input type="password" name="senha_usuario">
               </div>
               <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
-                <label for="checkbox">
-                  <input type="checkbox" name="checkbox"> Mantenha-se conectado
-                </label>
               </div>
               <div class="field padding-bottom--24">
                 <input type="submit" name="submit" value="Continuar">
@@ -73,5 +72,4 @@ if ($_POST) {
   </div>
   </div>
 </body>
-
 </html>

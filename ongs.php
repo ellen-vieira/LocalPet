@@ -22,19 +22,19 @@ $nRows = $listaProGeral->num_rows;
     <div class="card" style="width: 18rem;">
         <?php do { ?> <!-- Início da estrutura de repetição -->
             <!-- imagem -->
-            <img src="images/Proteja.png" class="card-img-top" alt="...">
+            <img src="images/<?php echo $rowProGeral['imagem_ong']; ?>" 
+            class="img-responsive img-rounded" style="height: 20em;">
             <div class="card-body">
                 <!-- nome -->
                 <h5 class="card-title text-center">
                     <strong><?php echo $rowProGeral['nome']; ?></strong>
                 </h5>
                 <!-- descricao -->
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text"><?php echo $rowProGeral['descricao']; ?></p>
                 <!-- botao -->
                 <a href="#" class="btn btn-danger">Saiba Mais</a>
             </div>
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
     </div>
-        </div>
-
+</div>
 </html>

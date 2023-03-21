@@ -92,8 +92,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
-                                <option value="<?php echo $row_fk['nome']; ?>">
-                                    <?php echo $row_fk['id']; ?>
+                                <option value="<?php echo $row_fk['id']; ?>">
+                                    <?php echo $row_fk['nome']; ?>
                                 </option>
                             <?php } while ($row_fk = $lista_fk->fetch_assoc());
                             $rows_fk = mysqli_num_rows($lista_fk);
