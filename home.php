@@ -160,8 +160,8 @@
       <div class="row featurette">
       <a name = "carousel">&nbsp;</a>
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-          <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Quem Somos? Somos a LocalPet! <span class="text-muted"><br> Parceiros das ONGs que regatam animais em situação de rua.</span></h2>
+          <p class="lead">Nosso site tem parceiria com várias ONGs para você que quer adotar um Pet, fazer doação para uma ONG cadastrada ou até mesmo encontrar o seu Pet perdido.</p>
         </div>
         <div class="col-md-5">
           <img src="images/sobre.png" alt="" width="500" height="500">
@@ -174,8 +174,8 @@
 
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-          <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Seu Pet se perdeu? <span class="text-muted">Nos te ajudamos na procura do seu Pet perdido.</span></h2>
+          <p class="lead">Encontre seu pet perdido com campanhas de marketing inteligente via Instagram e Facebook. Perdeu seu cachorro ou gato? Divulgue agora!</p>
         </div>
         <div class="col-md-5 order-md-1">
           <img src="images/A&P.png" alt="" width="500" height="500">
