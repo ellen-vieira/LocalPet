@@ -1,4 +1,3 @@
-<?php include 'conn/connect.php'?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Header-Login</title>
     <!-- ESTILO HEADER -->
     <style>
@@ -99,7 +98,7 @@
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <!-- LOGO -->
-                    <img src="images/localpet.png" alt="Local Pet" height="100px" width="100px">
+                    <img src="../images/localpet.png" alt="Local Pet" height="100px" width="100px">
                     <a href="home.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap" />
@@ -171,10 +170,6 @@
                 <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
                     <input type="search" class="form-control" placeholder="Procurar..." aria-label="Search">
                 </form>
-                <!-- LOGIN -->
-                <div class="text-end">
-                    <a href="usuarios_insere.php" type="submit" class="btn btn-danger btn-block">Cadastre-se</a>
-                </div>
             </div>
         </div>
     </header>
