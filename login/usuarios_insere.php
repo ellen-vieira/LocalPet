@@ -1,6 +1,6 @@
 <?php
 // INCLUIR  O ARQUIVO E FAZER A CONEXÃO
-include('conn/connect.php');
+include('../conn/connect.php');
 
 if ($_POST) {
 
@@ -31,7 +31,7 @@ if ($_POST) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<?php include 'header.php'; ?>
+<?php include 'header_login.php'; ?>
 <body>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">

@@ -1,6 +1,6 @@
 <?php
 // INCLUIR  O ARQUIVO E FAZER A CONEXÃO
-include('conn/connect.php');
+include('../conn/connect.php');
 
 if ($_POST) {
     print_r($_POST);
@@ -61,14 +61,14 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
     <!-- ICON -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
-<?php include 'header.php'; ?>
+<?php include '../login/header_login.php'; ?>
 
 <body>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
                 <!-- TÍTULO -->
-                <h4>Formulario de Adoção - ONG</h4>
+                <h4>Formulario de Adoção - CLIENTE</h4>
             </div>
             <div class="mb-1">
                 <form id="formulario" method="post">
