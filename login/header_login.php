@@ -158,7 +158,8 @@
                                     <use xlink:href="#people-circle" />
                                 </svg>
                                 <span class="glyphicon glyphicon-user"></span>
-                                Olá, <?php echo($_SESSION['email_usuario']); ?>!                            </a>
+                                Olá, <?php echo($_SESSION['email_usuario']); ?>!
+                            </a>
                         </li>
                     </ul>
                 </div>
