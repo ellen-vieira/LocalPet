@@ -18,7 +18,6 @@ if ($_POST) {
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
     $especie = $_POST['especie'];
-    $raca = $_POST['raca'];
     $sexo = $_POST['sexo'];
     $porte = $_POST['porte'];
     $idade = $_POST['idade'];
@@ -31,10 +30,10 @@ if ($_POST) {
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
-                    ( nome, especie, raca, sexo, porte, idade, descricao,
+                    ( nome, especie, sexo, porte, idade, descricao,
                     enfermidades, medicamentos, vacinas, comportamento, imgadocao)
                     VALUES
-                    ('$nome', '$especie' , '$raca', '$sexo', '$porte', '$idade', '$descricao',
+                    ('$nome', '$especie' , '$sexo', '$porte', '$idade', '$descricao',
                     '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imgadocao' )
                     ";
     var_dump($insertSQL);
@@ -93,8 +92,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
-                                <option value="<?php echo $row_fk['id']; ?>">
-                                    <?php echo $row_fk['nome']; ?>
+                                <option value="<?php echo $row_fk['nome']; ?>">
+                                    <?php echo $row_fk['id']; ?>
                                 </option>
                             <?php } while ($row_fk = $lista_fk->fetch_assoc());
                             $rows_fk = mysqli_num_rows($lista_fk);
@@ -155,7 +154,6 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                         <label for="imgadocao" class="form-label">Imagem do animal:</label>
                         <input class="form-control" type="file" id="imgadocao" name="imgadocao" accept="images/*">
                         <img src="" alt="" name="imagem" id="imagem" class="img-responsive">
-
                     </div>
                     <!-- BOTÃO -->
                     <div class="mb-2">
