@@ -63,12 +63,12 @@ if ($_POST) {
                     <!-- CNPJ -->
                     <div class="mb-4">
                         <label for="cnpj">CNPJ:</label>
-                        <input type="cnpj" class="form-control" name="cnpj" id="cnpj" required>
+                        <input type="cnpj" class="form-control" name="cnpj" id="cnpj" >
                     </div>
                     <!-- CPF -->
                     <div class="mb-4">
                         <label for="cpf">CPF:</label>
-                        <input type="cpf" class="form-control" name="cpf" id="cpf" required>
+                        <input type="cpf" class="form-control" name="cpf" id="cpf" >
                     </div>
                     <!-- DESCRIÇÃO -->
                     <div class="mb-4">
