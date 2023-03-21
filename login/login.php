@@ -1,5 +1,5 @@
 <?php
-include "conn/connect.php";
+include "../conn/connect.php";
 // INICIA A VERIFICAÇÃO DO LOGIN
 if ($_POST) {
   $email = $_POST['email_usuario'];
@@ -15,8 +15,8 @@ if ($_POST) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/adminlogin.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="../css/adminlogin.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
   <title>Login</title>
 </head>
 
@@ -29,7 +29,7 @@ if ($_POST) {
     <div class="box-root padding-top--24 flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
       <div class="box-root padding-top--48 padding-bottom--24 flex-flex flex-justifyContent--center">
         <!-- LOGO -->
-        <img class="ms-4" src="images/localpet.png" alt="" width="200" height="200">
+        <img class="ms-4" src="../images/localpet.png" alt="" width="200" height="200">
       </div>
       <div class="formbg-outer">
         <div class="formbg">

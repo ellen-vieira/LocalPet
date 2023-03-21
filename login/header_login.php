@@ -1,3 +1,6 @@
+<?php 
+include '../conn/connect.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -157,7 +160,7 @@
                                     <use xlink:href="#people-circle" />
                                 </svg>
                                 <span class="glyphicon glyphicon-user"></span>
-                                Olá, <?php echo($_SESSION['email_usuario']); ?>!
+                                Olá, <?php echo $_SESSION['email_usuario']; ?>!
                             </a>
                         </li>
                     </ul>
