@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -157,7 +160,7 @@
                                     <use xlink:href="#people-circle" />
                                 </svg>
                                 <span class="glyphicon glyphicon-user"></span>
-                                Login
+                                Olá, <?php echo $_SESSION['email']; ?>!
                             </a>
                         </li>
                     </ul>

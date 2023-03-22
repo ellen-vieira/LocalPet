@@ -19,7 +19,7 @@ if ($_POST) {
   if (mysqli_num_rows($emailRes) > 0) {
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
-    header('location: header_login.php');
+    header('location: ../home.php');
   } else {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
