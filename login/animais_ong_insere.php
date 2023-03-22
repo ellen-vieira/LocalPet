@@ -59,16 +59,16 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- ICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
-<?php include 'header.php'; ?>
+<?php include 'header_login.php'; ?>
 
 <body>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
                 <!-- TÍTULO -->
-                <h4>Formulario de Adoção - ONG</h4>
+                <h4>Formulario de Adoção</h4>
             </div>
             <div class="mb-1">
                 <form id="formulario" method="post">

@@ -1,5 +1,5 @@
 <?php
-include "conn/connect.php";
+include "../conn/connect.php";
 
 $listaProGeral = $conn->query("select * from animais where id");
 $rowProGeral = $listaProGeral->fetch_assoc();
@@ -12,18 +12,20 @@ $nRows = $listaProGeral->num_rows;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Adoção</title>
 </head>
-<?php include 'header.php'; ?>
+<?php include 'header_login.php'; ?>
 <div class="container">
-
+    <!-- BOTÃO -->
+    <div class="text-end">
+        <a href="animais_ong_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar Pet para Adoção</a>
+    </div>
     <h2 class="breadcrumb alert-danger"><strong></strong></h2>
     <div class="card" style="width: 18rem;">
         <?php do { ?> <!-- Início da estrutura de repetição -->
             <!-- imagem -->
-            <img src="images/<?php echo $rowProGeral['imagem_animal']; ?>" 
-            class="img-responsive img-rounded" style="height: 20em;">
+            <img src="../images/<?php echo $rowProGeral['imagem_animal']; ?>" class="img-responsive img-rounded" style="height: 20em;">
             <div class="card-body">
                 <!-- nome -->
                 <h5 class="card-title text-center">
@@ -37,4 +39,5 @@ $nRows = $listaProGeral->num_rows;
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
     </div>
 </div>
+
 </html>

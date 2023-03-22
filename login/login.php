@@ -19,11 +19,11 @@ if ($_POST) {
   if (mysqli_num_rows($emailRes) > 0) {
     $_SESSION['email'] = $email;
     $_SESSION['senha'] = $senha;
-    header('location: ../home.php');
+    header('location: home_login.php');
   } else {
     unset($_SESSION['email']);
     unset($_SESSION['senha']);
-    header('location: invasor.php');
+    header('location: ../usuarios_insere.php');
   }
 }
 ?>

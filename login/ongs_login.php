@@ -1,7 +1,7 @@
 <?php
-include "conn/connect.php";
+include "../conn/connect.php";
 
-$listaProGeral = $conn->query("select * from animais where id");
+$listaProGeral = $conn->query("select * from ongs where id");
 $rowProGeral = $listaProGeral->fetch_assoc();
 $nRows = $listaProGeral->num_rows;
 ?>
@@ -12,17 +12,20 @@ $nRows = $listaProGeral->num_rows;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Adoção</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>ONGs</title>
 </head>
-<?php include 'header.php'; ?>
+<?php include 'header_login.php'; ?>
 <div class="container">
-
+    <!-- BOTÃO -->
+    <div class="text-end">
+        <a href="ongs_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar ONG</a>
+    </div>
     <h2 class="breadcrumb alert-danger"><strong></strong></h2>
     <div class="card" style="width: 18rem;">
         <?php do { ?> <!-- Início da estrutura de repetição -->
             <!-- imagem -->
-            <img src="images/<?php echo $rowProGeral['imagem_animal']; ?>" 
+            <img src="../images/<?php echo $rowProGeral['imagem_ong']; ?>" 
             class="img-responsive img-rounded" style="height: 20em;">
             <div class="card-body">
                 <!-- nome -->
@@ -37,4 +40,5 @@ $nRows = $listaProGeral->num_rows;
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
     </div>
 </div>
+
 </html>

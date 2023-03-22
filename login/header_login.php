@@ -1,6 +1,5 @@
 <?php
 session_start();
-session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,7 +8,7 @@ session_destroy();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Header</title>
     <!-- ESTILO HEADER -->
     <style>
@@ -102,8 +101,8 @@ session_destroy();
             <div class="container">
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <!-- LOGO -->
-                    <img src="images/localpet.png" alt="Local Pet" height="100px" width="100px">
-                    <a href="home.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <img src="../images/localpet.png" alt="Local Pet" height="100px" width="100px">
+                    <a href="home_login.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap" />
                         </svg>
@@ -111,7 +110,7 @@ session_destroy();
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <!-- HOME -->
                         <li>
-                            <a href="home.php" class="nav-link text-white">
+                            <a href="home_login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#home" />
                                 </svg>
@@ -120,7 +119,7 @@ session_destroy();
                         </li>
                         <!-- SOBRE -->
                         <li>
-                            <a href="index.php#carousel" class="nav-link text-white">
+                            <a href="index_login.php#carousel" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#speedometer2" />
                                 </svg>
@@ -129,7 +128,7 @@ session_destroy();
                         </li>
                         <!-- ONGS -->
                         <li>
-                            <a href="ongs.php" class="nav-link text-white">
+                            <a href="ongs_login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#table" />
                                 </svg>
@@ -138,7 +137,7 @@ session_destroy();
                         </li>
                         <!-- ADOÇÃO -->
                         <li>
-                            <a href="adocao.php" class="nav-link text-white">
+                            <a href="adocao_login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#grid" />
                                 </svg>
@@ -147,7 +146,7 @@ session_destroy();
                         </li>
                         <!-- ACHADOS E PERDIDOS -->
                         <li>
-                            <a href="a&p.php" class="nav-link text-white">
+                            <a href="a&p_login.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#A&P" />
                                 </svg>
@@ -156,11 +155,10 @@ session_destroy();
                         </li>
                         <!-- LOGIN -->
                         <li>
-                            <a href="login/login.php" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
-                                    <use xlink:href="#people-circle" />
-                                </svg>
-                                Login
+                            <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                                <use xlink:href="#people-circle" />
+                            </svg>
+                            Olá, Bem Vindo <?php echo $_SESSION['email']; ?>!
                             </a>
                         </li>
                     </ul>
@@ -173,9 +171,9 @@ session_destroy();
                 <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
                     <input type="search" class="form-control" placeholder="Procurar..." aria-label="Search">
                 </form>
-                <!-- LOGIN -->
+                <!-- SAIR -->
                 <div class="text-end">
-                    <a href="usuarios_insere.php" type="submit" class="btn btn-danger btn-block">Cadastre-se</a>
+                    <a href="../home.php" type="submit" class="btn btn-danger btn-block">Sair</a>
                 </div>
             </div>
         </div>
@@ -184,6 +182,6 @@ session_destroy();
 </body>
 <!-- SCRIPT -->
 <script src="https://cdn.lordicon.com/ritcuqlt.js%22%3E"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
+<script src="../js/bootstrap.bundle.min.js"></script>
 
 </html>
