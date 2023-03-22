@@ -1,5 +1,6 @@
 <?php 
 session_start();
+session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -154,13 +155,11 @@ session_start();
                             </a>
                         </li>
                         <!-- LOGIN -->
-                        <li>
-                            <a href="login/login.php" class="nav-link text-white">
-                                <svg class="bi d-block mx-auto mb-1" width="24" height="24">
+                        <li>   <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#people-circle" />
                                 </svg>
                                 <span class="glyphicon glyphicon-user"></span>
-                                Olá, <?php echo $_SESSION['email']; ?>!
+                                <a href="login/login.php">Olá, Bem Vindo <?php echo $_SESSION['email']; ?>!</a>
                             </a>
                         </li>
                     </ul>
@@ -176,7 +175,8 @@ session_start();
                 <!-- LOGIN -->
                 <div class="text-end">
                     <a href="usuarios_insere.php" type="submit" class="btn btn-danger btn-block">Cadastre-se</a>
-                </div>
+                    <br><a href="home.php" type="submit" class="nav-link text-white btn btn-danger">Sair</a>
+                    </div>
             </div>
         </div>
     </header>
