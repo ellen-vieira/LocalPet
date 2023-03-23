@@ -29,7 +29,6 @@ if ($_POST) {
                     VALUES
                     ('$nome', '$cnpj', '$cpf', '$descricao', '$nome_img')
                     ";
-    var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
 ?>
@@ -71,7 +70,7 @@ if ($_POST) {
                     <!-- CPF -->
                     <div class="mb-4">
                         <label for="cpf">CPF:</label>
-                        <input type="cpf" class="form-control" name="cpf" id="cpf" required>
+                        <input type="cpf" class="form-control" name="cpf" id="cpf">
                     </div>
                     <!-- DESCRIÇÃO -->
                     <div class="mb-4">
@@ -81,7 +80,6 @@ if ($_POST) {
                     <!-- IMAGEM -->
                     <div class="mb-4">
                         <label for="imagem_ong" class="form-label">Imagem da sua ONG:</label>
-                        
                         <input class="form-control" type="file" id="imagem_ong" name="imagem_ong">
                     </div>
                     <!-- BOTÃO -->

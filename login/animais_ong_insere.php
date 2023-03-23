@@ -3,21 +3,22 @@
 include('../conn/connect.php');
 
 if ($_POST) {
-    print_r($_POST);
-    print_r($_FILES);
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
-    if (isset($_POST['enviar'])) {
-        $nome_img   =   $_FILES['imagem_animal']['name'];
-        $tmp_img    =   $_FILES['imagem_animal']['tmp_name'];
-        $dir_img    =   "../images/" . $nome_img;
-        move_uploaded_file($tmp_img, $dir_img);
-    };
+    // if (isset($_POST['enviar'])) {
+    $foto   =   $_FILES['imagem_animal'];
+    preg_match("/\.(gif|bmp|png|jpg){1}$/i", $foto['name'], $ext);
+    $nome_img = md5(uniqid(time())) . $ext[0];
+    $tmp_img    =   $foto['tmp_name'];
+    $dir_img    =   "../images/" . $nome_img;
+    move_uploaded_file($tmp_img, $dir_img);
+    // };
 
     // RECEBER OS DADOS DO FORMULÁRIO
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
     $especie = $_POST['especie'];
+    $raca_id = $_POST['raca_id'];
     $sexo = $_POST['sexo'];
     $porte = $_POST['porte'];
     $idade = $_POST['idade'];
@@ -26,25 +27,24 @@ if ($_POST) {
     $medicamentos = $_POST['medicamentos'];
     $vacinas = $_POST['vacinas'];
     $comportamento = $_POST['comportamento'];
-    $imgadocao = $_FILES['imagem_animal']['name'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
-                    ( nome, especie, sexo, porte, idade, descricao,
+                    ( nome, especie, raca_id, sexo, porte, idade, descricao,
                     enfermidades, medicamentos, vacinas, comportamento, imagem_animal)
                     VALUES
-                    ('$nome', '$especie' , '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imagem_animal' )
+                    ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
+                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$nome_img' )
                     ";
     var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
-
 // SELECIONAR OS DADOS DA CHAVE ESTRANGEIRA
 $consulta_fk    =   "SELECT * FROM raca ORDER BY nome ASC ";
 $lista_fk       =   $conn->query($consulta_fk);
 $row_fk         =   $lista_fk->fetch_assoc();
 $totalRows_fk   =   ($lista_fk)->num_rows;
+
 ?>
 
 <!DOCTYPE html>
@@ -71,9 +71,9 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                 <h4>Formulario de Adoção</h4>
             </div>
             <div class="mb-1">
-                <form id="formulario" method="post">
+                <form id="formulario" method="post" action="animais_ong_insere.php" enctype="multipart/form-data">
+                    <!-- NOME -->
                     <div class="mb-4">
-                        <!-- NOME -->
                         <div>
                             <label for="nome">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do animal" required>
@@ -87,8 +87,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- RAÇA -->
                     <div class="mb-4">
-                        <label for="raca">Raça:</label>
-                        <select class="form-select" aria-label="Default select example" name="raca" id="raca" required>
+                        <label for="raca_id">Raça:</label>
+                        <select class="form-select" aria-label="Default select example" name="raca_id" id="raca_id" required>
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
@@ -151,9 +151,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">
-                        <label for="imagem-animal" class="form-label">Imagem do animal:</label>
+                        <label for="imagem_animal" class="form-label">Imagem do animal:</label>
                         <input class="form-control" type="file" id="imagem_animal" name="imagem_animal">
-                        <img src="" alt="" name="imagem" id="imagem" class="img-responsive">
                     </div>
                     <!-- BOTÃO -->
                     <div class="mb-2">
