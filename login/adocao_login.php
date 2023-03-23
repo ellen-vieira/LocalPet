@@ -22,7 +22,6 @@ $nRows = $listaProGeral->num_rows;
         <a href="animais_ong_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar Pet para Adoção</a>
     </div>
     <div class="row">
-        <h2 class="breadcrumb alert-danger"><strong>Animais para adoção de ONGs</strong></h2>
         <?php do { ?> <!-- Início da estrutura de repetição -->
             <div class="card col-md-4 me-5" style="width: 18rem;">
                 <!-- imagem -->
@@ -43,5 +42,4 @@ $nRows = $listaProGeral->num_rows;
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
     </div>
 </div>
-
 </html>

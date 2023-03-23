@@ -18,7 +18,6 @@ $nRows = $listaProGeral->num_rows;
 <?php include 'header.php'; ?>
 <div class="container ">
     <div class="row">
-        <h2 class="breadcrumb alert-danger"><strong>ONGs</strong></h2>
         <?php do { ?> <!-- Início da estrutura de repetição -->
             <div class="card col-md-4 me-5" style="width: 18rem;">
                 <!-- imagem -->
