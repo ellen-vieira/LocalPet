@@ -16,26 +16,27 @@ $nRows = $listaProGeral->num_rows;
     <title>ONGs</title>
 </head>
 <?php include 'header_login.php'; ?>
-<div class="container">
+<div class="container ">
     <!-- BOTÃO -->
     <div class="text-end">
         <a href="ongs_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar ONG</a>
     </div>
-    <h2 class="breadcrumb alert-danger"><strong></strong></h2>
-    <div class="card" style="width: 18rem;">
+    <div class="row">
+        <h2 class="breadcrumb alert-danger"><strong></strong></h2>
         <?php do { ?> <!-- Início da estrutura de repetição -->
-            <!-- imagem -->
-            <img src="../images/<?php echo $rowProGeral['imagem_ong']; ?>" 
-            class="img-responsive img-rounded" style="height: 20em;">
-            <div class="card-body">
-                <!-- nome -->
-                <h5 class="card-title text-center">
-                    <strong><?php echo $rowProGeral['nome']; ?></strong>
-                </h5>
-                <!-- descricao -->
-                <p class="card-text"><?php echo $rowProGeral['descricao']; ?></p>
-                <!-- botao -->
-                <a href="#" class="btn btn-danger">Saiba Mais</a>
+            <div class="card col-md-4 me-5" style="width: 18rem;">
+                <!-- imagem -->
+                <img src="../images/<?php echo $rowProGeral['imagem_ong']; ?>" class="img-responsive img-rounded" style="height: 20em;">
+                <div class="card-body">
+                    <!-- nome -->
+                    <h5 class="card-title text-center">
+                        <strong><?php echo $rowProGeral['nome']; ?></strong>
+                    </h5>
+                    <!-- descricao -->
+                    <p class="card-text"><?php echo $rowProGeral['descricao']; ?></p>
+                    <!-- botao -->
+                    <a href="#" class="btn btn-danger">Saiba Mais</a>
+                </div>
             </div>
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
     </div>

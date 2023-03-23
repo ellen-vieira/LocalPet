@@ -8,8 +8,8 @@ if ($_POST) {
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
     if (isset($_POST['enviar'])) {
-        $nome_img   =   $_FILES['imgadocao']['name'];
-        $tmp_img    =   $_FILES['imgadocao']['tmp_name'];
+        $nome_img   =   $_FILES['imagem_animal']['name'];
+        $tmp_img    =   $_FILES['imagem_animal']['tmp_name'];
         $dir_img    =   "../images/" . $nome_img;
         move_uploaded_file($tmp_img, $dir_img);
     };
@@ -26,15 +26,15 @@ if ($_POST) {
     $medicamentos = $_POST['medicamentos'];
     $vacinas = $_POST['vacinas'];
     $comportamento = $_POST['comportamento'];
-    $imgadocao = $_FILES['imgadocao']['name'];
+    $imgadocao = $_FILES['imagem_animal']['name'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
                     ( nome, especie, sexo, porte, idade, descricao,
-                    enfermidades, medicamentos, vacinas, comportamento, imgadocao)
+                    enfermidades, medicamentos, vacinas, comportamento, imagem_animal)
                     VALUES
                     ('$nome', '$especie' , '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imgadocao' )
+                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imagem_animal' )
                     ";
     var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
@@ -151,8 +151,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">
-                        <label for="imgadocao" class="form-label">Imagem do animal:</label>
-                        <input class="form-control" type="file" id="imgadocao" name="imgadocao" accept="images/*">
+                        <label for="imagem-animal" class="form-label">Imagem do animal:</label>
+                        <input class="form-control" type="file" id="imagem_animal" name="imagem_animal">
                         <img src="" alt="" name="imagem" id="imagem" class="img-responsive">
                     </div>
                     <!-- BOTÃO -->
@@ -165,37 +165,6 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
             </div>
         </div>
     </section>
-
-    <!-- Script para a imagem -->
-    <script>
-        document.getElementById("imgadocao").onchange = function() {
-            var reader = new FileReader();
-            if (this.files[0].size > 528385) {
-                alert("A imagem deve ter no máximo 500Kb");
-                $("#imagem").attr("src", "blank");
-                $("#imagem").hide();
-                $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
-                $('#imgadocao').unwrap();
-                return false;
-            };
-            // if (this.files[0].type.indexOf("images") == -1) {
-            //     alert("Formato inválido, escolha uma imagem!");
-            //     $("#imagem").attr("src", "blank");
-            //     $("#imagem").hide();
-            //     $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
-            //     $('#imgadocao').unwrap();
-            //     return false;
-            // };
-            reader.onload = function(e) {
-                // obter dados carregados e renderizar miniatura.
-                document.getElementById("imagem").src = e.target.result;
-                $("#imagem").show();
-            };
-            // leia o arquivo de imagem como um URL de dados.
-            reader.readAsDataURL(this.files[0]);
-        };
-    </script>
-
 
 </body>
 

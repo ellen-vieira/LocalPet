@@ -5,12 +5,14 @@ include('../conn/connect.php');
 if ($_POST) {
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
-    if (isset($_POST['enviar'])) {
-        $nome_img   =   $_FILES['imagem_ong']['name'];
-        $tmp_img    =   $_FILES['imagem_ong']['tmp_name'];
+    // if (isset($_POST['enviar'])) {
+        $foto   =   $_FILES['imagem_ong'];
+        preg_match("/\.(gif|bmp|png|jpg){1}$/i",$foto['name'],$ext);
+        $nome_img = md5(uniqid(time())).$ext[0];
+        $tmp_img    =   $foto['tmp_name'];
         $dir_img    =   "../images/" . $nome_img;
         move_uploaded_file($tmp_img, $dir_img);
-    };
+    // };
 
 
     // RECEBER OS DADOS DO FORMULÁRIO
@@ -19,13 +21,13 @@ if ($_POST) {
     $cnpj = $_POST['cnpj'];
     $cpf = $_POST['cpf'];
     $descricao = $_POST['descricao'];
-    $imagem_ong = $_FILES['imagem_ong']['name'];
+   
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO ongs
                     ( nome, cnpj, cpf, descricao, imagem_ong)
                     VALUES
-                    ('$nome', '$cnpj', '$cpf', '$descricao', '$imagem_ong')
+                    ('$nome', '$cnpj', '$cpf', '$descricao', '$nome_img')
                     ";
     var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
@@ -53,7 +55,7 @@ if ($_POST) {
                 <h4>Cadastrar ONGs</h4>
             </div>
             <div class="mb-1">
-                <form id="cadastro" method="post">
+                <form id="cadastro" method="post" action="ongs_insere.php" enctype="multipart/form-data">
                     <!-- NOME -->
                     <div class="mb-4">
                         <div>
@@ -79,7 +81,8 @@ if ($_POST) {
                     <!-- IMAGEM -->
                     <div class="mb-4">
                         <label for="imagem_ong" class="form-label">Imagem da sua ONG:</label>
-                        <input class="form-control" type="file" id="imagem_ong">
+                        
+                        <input class="form-control" type="file" id="imagem_ong" name="imagem_ong">
                     </div>
                     <!-- BOTÃO -->
                     <div class="mb-2">
