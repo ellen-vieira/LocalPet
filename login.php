@@ -6,7 +6,7 @@ if ($_POST) {
   $email = $_POST['email'];
   $senha = $_POST['senha'];
   // echo $login . " - " .$senha;
-  $emailRes = $conn->query("select * from db_localpet.usuarios where email = '$email' and senha = '$senha'");
+  $emailRes = $conn->query("select * from db_localpet.usuarios where email = '$email' and senha = md5('$senha')");
   $rowEmail = $emailRes->fetch_assoc();
   // $numRow = $loginRes->num_rows;
   $numRow = mysqli_num_rows($emailRes);

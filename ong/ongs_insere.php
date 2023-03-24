@@ -14,7 +14,6 @@ if ($_POST) {
         move_uploaded_file($tmp_img, $dir_img);
     // };
 
-
     // RECEBER OS DADOS DO FORMULÁRIO
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
@@ -22,7 +21,6 @@ if ($_POST) {
     $cpf = $_POST['cpf'];
     $descricao = $_POST['descricao'];
    
-
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO ongs
                     ( nome, cnpj, cpf, descricao, imagem_ong)
