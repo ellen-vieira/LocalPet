@@ -15,7 +15,7 @@ if ($_POST) {
     $insertSQL = "INSERT INTO usuarios
                     ( nome, email, senha, nivel_id)
                     VALUES
-                    ('$nome', '$email' , '$senha' , $nivel_id)
+                    ('$nome', '$email' , md5('$senha') , $nivel_id)
                     ";
     $resultado = $conn->query($insertSQL);
 }
