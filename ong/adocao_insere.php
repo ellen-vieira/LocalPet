@@ -107,8 +107,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     <!-- SEXO -->
                     <div class="mb-4">
                         <label for="sexo">Sexo:</label><br>
-                        <input type="radio" class="form-check-input" name="sexo" value="macho"> Macho
-                        <input type="radio" class="form-check-input" name="sexo" value="femea"> Fêmea
+                        <input type="radio" class="form-check-input" name="sexo" value="Macho"> Macho
+                        <input type="radio" class="form-check-input" name="sexo" value="Fêmea"> Fêmea
                     </div>
                     <!-- PORTE -->
                     <div class="mb-4">
