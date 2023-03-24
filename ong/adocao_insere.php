@@ -113,16 +113,16 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     <!-- PORTE -->
                     <div class="mb-4">
                         <label for="porte">Porte:</label><br>
-                        <input type="radio" class="form-check-input" name="porte" value="pequeno"> Pequeno
-                        <input type="radio" class="form-check-input" name="porte" value="medio"> Médio
-                        <input type="radio" class="form-check-input" name="porte" value="grande"> Grande
+                        <input type="radio" class="form-check-input" name="porte" value="Pequeno"> Pequeno
+                        <input type="radio" class="form-check-input" name="porte" value="Médio"> Médio
+                        <input type="radio" class="form-check-input" name="porte" value="Grande"> Grande
                     </div>
                     <!-- IDADE -->
                     <div class="mb-4">
                         <label for="idade">Idade:</label><br>
-                        <input type="radio" class="form-check-input" name="idade" value="filhote"> Filhote
-                        <input type="radio" class="form-check-input" name="idade" value="adulto"> Adulto
-                        <input type="radio" class="form-check-input" name="idade" value="idoso"> Idoso
+                        <input type="radio" class="form-check-input" name="idade" value="Filhote"> Filhote
+                        <input type="radio" class="form-check-input" name="idade" value="Adulto"> Adulto
+                        <input type="radio" class="form-check-input" name="idade" value="Idoso"> Idoso
                     </div>
                     <!-- CARACT. FÍSICAS -->
                     <div class="mb-4">
