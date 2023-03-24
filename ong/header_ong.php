@@ -102,7 +102,7 @@ session_start();
                 <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <!-- LOGO -->
                     <img src="../images/localpet.png" alt="Local Pet" height="100px" width="100px">
-                    <a href="home_login.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                    <a href="home_ong.php" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                         <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
                             <use xlink:href="#bootstrap" />
                         </svg>
@@ -110,7 +110,7 @@ session_start();
                     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                         <!-- HOME -->
                         <li>
-                            <a href="home_login.php" class="nav-link text-white">
+                            <a href="home_ong.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#home" />
                                 </svg>
@@ -119,7 +119,7 @@ session_start();
                         </li>
                         <!-- SOBRE -->
                         <li>
-                            <a href="index_login.php#carousel" class="nav-link text-white">
+                            <a href="index_ong.php#carousel" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#speedometer2" />
                                 </svg>
@@ -128,7 +128,7 @@ session_start();
                         </li>
                         <!-- ONGS -->
                         <li>
-                            <a href="ongs_login.php" class="nav-link text-white">
+                            <a href="mostrar_ong.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#table" />
                                 </svg>
@@ -137,7 +137,7 @@ session_start();
                         </li>
                         <!-- ADOÇÃO -->
                         <li>
-                            <a href="adocao_login.php" class="nav-link text-white">
+                            <a href="mostrar_adocao.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#grid" />
                                 </svg>
@@ -146,7 +146,7 @@ session_start();
                         </li>
                         <!-- ACHADOS E PERDIDOS -->
                         <li>
-                            <a href="a&p_login.php" class="nav-link text-white">
+                            <a href="mostrar_a&p.php" class="nav-link text-white">
                                 <svg class="bi d-block mx-auto mb-1" width="24" height="24">
                                     <use xlink:href="#A&P" />
                                 </svg>

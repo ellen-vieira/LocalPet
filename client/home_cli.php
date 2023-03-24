@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
   <!-- TITULO -->
-  <title>Local Pet</title>
+  <title>Local Pet - Cliente</title>
   <!-- LINK BOOTSTRAP -->
   <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
@@ -71,7 +71,7 @@
 
 <body id="corpo">
 
-  <?php include 'header_login.php'; ?>
+  <?php include 'header_cli.php'; ?>
 
   <!-- CARROSSEL  -->
   <main>
@@ -133,7 +133,7 @@
           <p> Conheça nosso espaço dedicado à ONGs. Se você for uma ONG/Protetor interessado em fazer parte dos nossos
             espaços, aqui poderá obter mais informações sobre como participar.</p>
           <br>
-          <p><a class="btn btn-danger" href="ongs.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="mostrar_ong.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="image" src="../images/Icon2.png" alt="adote" width="80" height="80">
@@ -141,7 +141,7 @@
           <p> Conheça nosso espaço dedicado à adoção. Aqui você irá conhecer mais informçãoes sobre os cães e/ou gatos das
             ONGs/protetores parceiros que buscam um novo lar.</p>
           <br>
-          <p><a class="btn btn-danger" href="adocao.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="mostrar_adocao.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
         <div class="col-lg-4">
           <img class="image" src="../images/Icon3.png" alt="perdidos" width="80" height="80">
@@ -149,7 +149,7 @@
           <p>Conheça nosso espaço dedicado à animais perdidos e/ou que foram achados. Aqui você pode
             divulgar informações sobre o seu pet que foi perdido e/ou algum outro animalzinho que foi achado na rua e pode ser de alguém!
           </p>
-          <p><a class="btn btn-danger" href="a&p.php" role="button">SAIBA MAIS &raquo;</a></p>
+          <p><a class="btn btn-danger" href="mostrar_a&p.php" role="button">SAIBA MAIS &raquo;</a></p>
         </div>
       </div>
 

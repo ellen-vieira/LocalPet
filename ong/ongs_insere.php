@@ -45,7 +45,7 @@ if ($_POST) {
     <link rel="stylesheet" href="../css/bootstrap.css">
 
 </head>
-<?php include 'header_login.php'; ?>
+<?php include 'header_ong.php'; ?>
 <div>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-4">

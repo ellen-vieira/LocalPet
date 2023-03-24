@@ -3,21 +3,22 @@
 include('../conn/connect.php');
 
 if ($_POST) {
-    print_r($_POST);
-    print_r($_FILES);
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
-    if (isset($_POST['enviar'])) {
-        $nome_img   =   $_FILES['imgadocao']['name'];
-        $tmp_img    =   $_FILES['imgadocao']['tmp_name'];
-        $dir_img    =   "../images/" . $nome_img;
-        move_uploaded_file($tmp_img, $dir_img);
-    };
+    // if (isset($_POST['enviar'])) {
+    $foto   =   $_FILES['imagem_animal'];
+    preg_match("/\.(gif|bmp|png|jpg){1}$/i", $foto['name'], $ext);
+    $nome_img = md5(uniqid(time())) . $ext[0];
+    $tmp_img    =   $foto['tmp_name'];
+    $dir_img    =   "../images/" . $nome_img;
+    move_uploaded_file($tmp_img, $dir_img);
+    // };
 
     // RECEBER OS DADOS DO FORMULÁRIO
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
     $especie = $_POST['especie'];
+    $raca_id = $_POST['raca_id'];
     $sexo = $_POST['sexo'];
     $porte = $_POST['porte'];
     $idade = $_POST['idade'];
@@ -26,25 +27,24 @@ if ($_POST) {
     $medicamentos = $_POST['medicamentos'];
     $vacinas = $_POST['vacinas'];
     $comportamento = $_POST['comportamento'];
-    $imgadocao = $_FILES['imgadocao']['name'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
-                    ( nome, especie, sexo, porte, idade, descricao,
-                    enfermidades, medicamentos, vacinas, comportamento, imgadocao)
+                    ( nome, especie, raca_id, sexo, porte, idade, descricao,
+                    enfermidades, medicamentos, vacinas, comportamento, imagem_animal)
                     VALUES
-                    ('$nome', '$especie' , '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento', '$imgadocao' )
+                    ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
+                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$nome_img' )
                     ";
     var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
-
 // SELECIONAR OS DADOS DA CHAVE ESTRANGEIRA
 $consulta_fk    =   "SELECT * FROM raca ORDER BY nome ASC ";
 $lista_fk       =   $conn->query($consulta_fk);
 $row_fk         =   $lista_fk->fetch_assoc();
 $totalRows_fk   =   ($lista_fk)->num_rows;
+
 ?>
 
 <!DOCTYPE html>
@@ -56,24 +56,24 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
     <title>Formulario de Adoção - ONG</title>
     <!-- LINKS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- ICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
-<?php include '../login/header_login.php'; ?>
+<?php include 'header_ong.php'; ?>
 
 <body>
     <section class="d-flex justify-content-center align-items-center">
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
                 <!-- TÍTULO -->
-                <h4>Formulario de Adoção - CLIENTE</h4>
+                <h4>Formulario de Adoção</h4>
             </div>
             <div class="mb-1">
-                <form id="formulario" method="post">
+                <form id="formulario" method="post" action="adocao_insere.php" enctype="multipart/form-data">
+                    <!-- NOME -->
                     <div class="mb-4">
-                        <!-- NOME -->
                         <div>
                             <label for="nome">Nome:</label>
                             <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite o nome do animal" required>
@@ -87,8 +87,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- RAÇA -->
                     <div class="mb-4">
-                        <label for="raca">Raça:</label>
-                        <select class="form-select" aria-label="Default select example" name="raca" id="raca" required>
+                        <label for="raca_id">Raça:</label>
+                        <select class="form-select" aria-label="Default select example" name="raca_id" id="raca_id" required>
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
@@ -151,9 +151,8 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">
-                        <label for="imgadocao" class="form-label">Imagem do animal:</label>
-                        <input class="form-control" type="file" id="imgadocao" name="imgadocao" accept="images/*">
-                        <img src="" alt="" name="imagem" id="imagem" class="img-responsive">
+                        <label for="imagem_animal" class="form-label">Imagem do animal:</label>
+                        <input class="form-control" type="file" id="imagem_animal" name="imagem_animal">
                     </div>
                     <!-- BOTÃO -->
                     <div class="mb-2">
@@ -165,37 +164,6 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
             </div>
         </div>
     </section>
-
-    <!-- Script para a imagem -->
-    <script>
-        document.getElementById("imgadocao").onchange = function() {
-            var reader = new FileReader();
-            if (this.files[0].size > 528385) {
-                alert("A imagem deve ter no máximo 500Kb");
-                $("#imagem").attr("src", "blank");
-                $("#imagem").hide();
-                $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
-                $('#imgadocao').unwrap();
-                return false;
-            };
-            // if (this.files[0].type.indexOf("images") == -1) {
-            //     alert("Formato inválido, escolha uma imagem!");
-            //     $("#imagem").attr("src", "blank");
-            //     $("#imagem").hide();
-            //     $('#imgadocao').wrap('<form>').closest('form').get(0).reset();
-            //     $('#imgadocao').unwrap();
-            //     return false;
-            // };
-            reader.onload = function(e) {
-                // obter dados carregados e renderizar miniatura.
-                document.getElementById("imagem").src = e.target.result;
-                $("#imagem").show();
-            };
-            // leia o arquivo de imagem como um URL de dados.
-            reader.readAsDataURL(this.files[0]);
-        };
-    </script>
-
 
 </body>
 

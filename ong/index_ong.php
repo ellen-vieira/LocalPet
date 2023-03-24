@@ -6,17 +6,16 @@
     <!-- TITULO -->
     <title>Local Pet</title>
     <!-- LINK BOOTSTRAP -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <!-- ICON -->
-    <link rel="icon" type="image/png" href="images/favicon.png"/>
+    <link rel="icon" type="image/png" href="../images/favicon.png"/>
   
 </head>
 <body>
 
  <!-- Área de menu -->
- <?php include 'home_login.php'; ?>
+ <?php include 'home_ong.php'; ?>
     <a name="home">&nbsp;</a>
     <main class="container">
 
@@ -24,7 +23,7 @@
 
 <!-- Link arquivos Bootstrap js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">

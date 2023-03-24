@@ -15,11 +15,11 @@ $nRows = $listaProGeral->num_rows;
     <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Adoção</title>
 </head>
-<?php include 'header_login.php'; ?>
+<?php include 'header_ong.php'; ?>
 <div class="container">
     <!-- BOTÃO -->
     <div class="text-end">
-        <a href="animais_ong_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar Pet para Adoção</a>
+        <a href="adocao_insere.php" type="submit" class="btn btn-danger btn-block">Cadastrar Pet para Adoção</a>
     </div>
     <div class="row">
         <?php do { ?> <!-- Início da estrutura de repetição -->

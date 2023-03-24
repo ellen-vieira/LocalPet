@@ -1,5 +1,5 @@
 <?php
-include "../conn/connect.php";
+include "conn/connect.php";
 session_start();
 // Inicia a verificação do login
 if ($_POST) {
@@ -16,15 +16,30 @@ if ($_POST) {
     session_start();
     $session_name_new = session_name();
   }
-  if (mysqli_num_rows($emailRes) > 0) {
+  if($numRow > 0){
     $_SESSION['email'] = $email;
-    $_SESSION['senha'] = $senha;
-    header('location: home_login.php');
-  } else {
-    unset($_SESSION['email']);
-    unset($_SESSION['senha']);
-    header('location: ../usuarios_insere.php');
-  }
+    $_SESSION['nivel_id'] = $rowEmail['nivel_id'];
+    $_SESSION['nome_da_sessao'] = session_name();
+    if($rowEmail['nivel_id']=='4'){
+        echo "<script>window.open('ong/home_ong.php','_self')</script>";
+    }elseif ($rowEmail['nivel_id']=='3') {
+        echo "<script>window.open('client/home_cli.php','_self')</script>";
+    }
+}else{
+    echo "<script>window.open('usuarios_insere.php','_self')</script>";
+}
+
+
+  // if (mysqli_num_rows($emailRes) > 0) {
+  //   $_SESSION['email'] = $email;
+  //   $_SESSION['senha'] = $senha;
+  //   $_SESSION['nivel_id'] = ;
+  //   header('location: ong/home_ong.php');
+  // } else {
+  //   unset($_SESSION['email']);
+  //   unset($_SESSION['senha']);
+  //   header('location: ../usuarios_insere.php');
+  // }
 }
 ?>
 <!doctype html>
@@ -39,9 +54,9 @@ if ($_POST) {
   <title>Login</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
-  <link href="../css/bootstrap.css" rel="stylesheet">
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/sign-in.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/sign-in.css">
 
   <style>
     #corpo {
@@ -105,7 +120,7 @@ if ($_POST) {
 
   <main class="form-signin w-100 m-auto">
     <form action="login.php" name="form_login" id="form_login" method="POST" enctype="multipart/form-data">
-      <img class="mb-4" src="../images/localpet.png" alt="" width="200" height="200">
+      <img class="mb-4" src="images/localpet.png" alt="" width="200" height="200">
       <h1 class="h3 mb-3 fw-normal">Faça seu Login</h1>
 
       <div class="form-floating">
@@ -125,6 +140,6 @@ if ($_POST) {
 </body>
 <!-- Link arquivos Bootstrap js -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 </html>

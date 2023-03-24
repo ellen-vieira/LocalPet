@@ -53,15 +53,15 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Adoção - ONG</title>
+    <title>Formulario de Adoção - Cliente</title>
     <!-- LINKS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- ICON -->
     <link rel="icon" type="image/png" href="../images/favicon.png" />
 </head>
-<?php include 'header_login.php'; ?>
+<?php include 'header_cli.php'; ?>
 
 <body>
     <section class="d-flex justify-content-center align-items-center">
@@ -71,7 +71,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                 <h4>Formulario de Adoção</h4>
             </div>
             <div class="mb-1">
-                <form id="formulario" method="post" action="animais_ong_insere.php" enctype="multipart/form-data">
+                <form id="formulario" method="post" action="adocao_insere.php" enctype="multipart/form-data">
                     <!-- NOME -->
                     <div class="mb-4">
                         <div>
