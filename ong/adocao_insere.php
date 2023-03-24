@@ -36,7 +36,6 @@ if ($_POST) {
                     ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
                     '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$nome_img' )
                     ";
-    var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
 }
 // SELECIONAR OS DADOS DA CHAVE ESTRANGEIRA
