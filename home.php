@@ -162,6 +162,9 @@
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">Quem Somos? Somos a LocalPet! <span class="text-muted"><br> Parceiros das ONGs que regatam animais em situação de rua.</span></h2>
           <p class="lead">Nosso site tem parceiria com várias ONGs para você que quer adotar um Pet, fazer doação para uma ONG cadastrada ou até mesmo encontrar o seu Pet perdido.</p>
+         <!-- BOTÃO -->
+          <a class="btn btn-danger" href="sobre_nos_login.php" role="button">SAIBA MAIS</a>
+        </div>
         </div>
         <div class="col-md-5">
           <img src="images/sobre.png" alt="" width="500" height="500">
@@ -176,6 +179,9 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading fw-normal lh-1">Seu Pet se perdeu? <span class="text-muted">Nos te ajudamos na procura do seu Pet perdido.</span></h2>
           <p class="lead">Encontre seu pet perdido com campanhas de marketing inteligente via Instagram e Facebook. Perdeu seu cachorro ou gato? Divulgue agora!</p>
+        <!-- BOTÃO -->
+          <a class="btn btn-danger" href="a&p.php" role="button">SAIBA MAIS</a>
+        </div>
         </div>
         <div class="col-md-5 order-md-1">
           <img src="images/A&P.png" alt="" width="500" height="500">
@@ -188,8 +194,11 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+          <h2 class="featurette-heading fw-normal lh-1">Proteja os animais de rua! <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead"> Caso você presencie maus-tratos a animais de quaisquer espécies, sejam domésticos, domesticados, silvestres ou exóticos, vá à delegacia de polícia mais próxima para lavrar o Boletim de Ocorrência (BO), ou compareça à Promotoria de Justiça do Meio Ambiente. A denúncia de maus-tratos é legitimada pelo Art. 32, da Lei Federal nº. 9.605, de 12.02.1998 (Lei de Crimes Ambientais) e pela Constituição Federal Brasileira, de 05 de outubro de 1988.</p>
+        <!-- BOTÃO -->
+          <a class="btn btn-danger" href="proteja.php" role="button">SAIBA MAIS</a>
+        </div>
         </div>
         <div class="col-md-5">
           <img src="images/proteja.png" alt="" width="500" height="500">
@@ -201,9 +210,6 @@
       <hr class="featurette-divider">
 
       <!-- FIM FEATURETTES -->
-
-    </div>
-
 
     <!-- RODAPÉ -->
     <footer class="container">
