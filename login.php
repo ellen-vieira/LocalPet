@@ -29,6 +29,13 @@ if ($_POST) {
     echo "<script>window.open('usuarios_insere.php','_self')</script>";
 }
 
+//ID DO USUARIO E ONG - paloma
+  //if($rowEmail['nivel_id']=='2'){
+    //    echo "<script>window.open('ong/home_ong.php','_self')</script>";
+    //}elseif ($rowEmail['nivel_id']=='1') {
+      //  echo "<script>window.open('client/home_cli.php','_self')</script>";
+    //}
+
 
   // if (mysqli_num_rows($emailRes) > 0) {
   //   $_SESSION['email'] = $email;
