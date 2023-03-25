@@ -146,10 +146,10 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     </div>
                     <!-- LOCALIZAÇAO -->
                     <div class="mb-4">
-                        <label for="comportamento" required>Visto por último:</label>
-                        <textarea name="comportamento" id="comportamento" class="form-control" placeholder="Ex: Onde foi visto pela última vez, horário"></textarea>
+                        <label for="visto" required>Visto por último:</label>
+                        <textarea name="visto" id="visto" class="form-control" placeholder="Ex: Onde foi visto pela última vez, horário"></textarea>
                     </div>
-                    <!-- TELEFONE -->
+                    <!-- TELEFONR -->
                     <div class="mb-4">
                         <label for="telefone">Telefone para contato:</label>
                         <input type="text" class="form-control" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
