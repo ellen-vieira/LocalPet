@@ -18,17 +18,16 @@ if ($_POST) {
     // ORGANIZAR OS CAMPOS NA MESMA ORDEM
     $nome = $_POST['nome'];
     $cnpj = $_POST['cnpj'];
-    $cpf = $_POST['cpf'];
+    $cpfResponsavel = $_POST['cpfResponsavel'];
     $descricao = $_POST['descricao'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO ongs
-                    ( nome, cnpj, cpf, descricao, imagem_ong)
+                    ( nome, cnpj, cpfResponsavel, descricao, imagem_ong)
                     VALUES
-                    ('$nome', '$cnpj', '$cpf', '$descricao', '$nome_img')
+                    ('$nome', '$cnpj', '$cpfResponsavel', '$descricao', '$nome_img')
                     ";
     $resultado = $conn->query($insertSQL);
-
 }
 ?>
 <!DOCTYPE html>
@@ -68,8 +67,8 @@ if ($_POST) {
                     </div>
                     <!-- CPF -->
                     <div class="mb-4">
-                        <label for="cpf">CPF:</label>
-                        <input type="cpf" class="form-control" name="cpf" id="cpf">
+                        <label for="cpfResponsavel">CPF:</label>
+                        <input type="cpfResponsavel" class="form-control" name="cpfResponsavel" id="cpfResponsavel">
                     </div>
                     <!-- DESCRIÇÃO -->
                     <div class="mb-4">
