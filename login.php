@@ -20,9 +20,9 @@ if ($_POST) {
     $_SESSION['email'] = $email;
     $_SESSION['nivel_id'] = $rowEmail['nivel_id'];
     $_SESSION['nome_da_sessao'] = session_name();
-    if($rowEmail['nivel_id']=='4'){
+    if($rowEmail['nivel_id']=='2'){
         echo "<script>window.open('ong/home_ong.php','_self')</script>";
-    }elseif ($rowEmail['nivel_id']=='3') {
+    }elseif ($rowEmail['nivel_id']=='1') {
         echo "<script>window.open('client/home_cli.php','_self')</script>";
     }
 }else{

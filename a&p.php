@@ -31,6 +31,8 @@ $nRows = $listaProGeral->num_rows;
                 </h5>
                 <!-- descricao -->
                 <p class="card-text"><?php echo $rowProGeral['descricao']; ?></p>
+                <img src="gatinho.jpg" alt="">
+
                 <!-- botao -->
                 <a href="#" class="btn btn-danger">Saiba Mais</a>
             </div>
