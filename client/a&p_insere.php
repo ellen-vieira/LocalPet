@@ -25,16 +25,16 @@ if ($_POST) {
     $descricao = $_POST['descricao'];
     $enfermidades = $_POST['enfermidades'];
     $medicamentos = $_POST['medicamentos'];
-    $vacinas = $_POST['vacinas'];
-    $comportamento = $_POST['comportamento'];
+    $localizacao = $_POST['localizacao'];
+    $telefone = $_POST['telefone'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
-    $insertSQL = "INSERT INTO animais
+    $insertSQL = "INSERT INTO animais_ap
                     ( nome, especie, raca_id, sexo, porte, idade, descricao,
-                    enfermidades, medicamentos, vacinas, comportamento, imagem_animal)
+                    enfermidades, medicamentos, localizacao, telefone, imagem_animal)
                     VALUES
                     ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$nome_img' )
+                    '$enfermidades', '$medicamentos', '$localizacao', '$telefone', '$nome_img' )
                     ";
     $resultado = $conn->query($insertSQL);
 }
@@ -139,17 +139,12 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                         <label for="medicamentos">Toma algum tipo de medicação?</label>
                         <input type="text" class="form-control" name="medicamentos" id="medicamentos" placeholder="Digite qual se houver" required>
                     </div>
-                    <!-- VACINAS -->
-                    <div class="mb-4">
-                        <label for="vacinas">Vacinas recebidas:</label>
-                        <input type="text" class="form-control" name="vacinas" id="medicacao" placeholder="Digite qual se houver" required>
-                    </div>
                     <!-- LOCALIZAÇAO -->
                     <div class="mb-4">
-                        <label for="visto" required>Visto por último:</label>
-                        <textarea name="visto" id="visto" class="form-control" placeholder="Ex: Onde foi visto pela última vez, horário"></textarea>
+                        <label for="localizacao" required>Visto por último:</label>
+                        <textarea name="localizacao" id="localizacao" class="form-control" placeholder="Ex: Onde foi visto pela última vez, horário"></textarea>
                     </div>
-                    <!-- TELEFONR -->
+                    <!-- TELEFONE -->
                     <div class="mb-4">
                         <label for="telefone">Telefone para contato:</label>
                         <input type="text" class="form-control" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
