@@ -179,7 +179,7 @@
           <h2 class="featurette-heading fw-normal lh-1">Seu Pet se perdeu? <span class="text-muted">Nos te ajudamos na procura do seu Pet perdido.</span></h2>
           <p class="lead">Encontre seu pet perdido com campanhas de marketing inteligente via Instagram e Facebook. Perdeu seu cachorro ou gato? Divulgue agora!</p>
         <!-- BOTÃO -->
-          <a class="btn btn-danger" href="mostrar_a&p.php" role="button">SAIBA MAIS</a>
+          <a class="btn btn-danger" href="a&p.php" role="button">SAIBA MAIS</a>
         </div>
         <div class="col-md-5 order-md-1">
           <img src="images/A&P.png" alt="" width="500" height="500">

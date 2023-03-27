@@ -6,12 +6,12 @@ if ($_POST) {
 
     // GUARDA O NOME DA IMAGEM NO BANCO E O ARQUIVO NO DIRETÓRIO
     // if (isset($_POST['enviar'])) {
-        $foto   =   $_FILES['imagem_ong'];
-        preg_match("/\.(gif|bmp|png|jpg){1}$/i",$foto['name'],$ext);
-        $nome_img = md5(uniqid(time())).$ext[0];
-        $tmp_img    =   $foto['tmp_name'];
-        $dir_img    =   "../images/" . $nome_img;
-        move_uploaded_file($tmp_img, $dir_img);
+    $foto   =   $_FILES['imagem_ong'];
+    preg_match("/\.(gif|bmp|png|jpg){1}$/i", $foto['name'], $ext);
+    $nome_img = md5(uniqid(time())) . $ext[0];
+    $tmp_img    =   $foto['tmp_name'];
+    $dir_img    =   "../images/" . $nome_img;
+    move_uploaded_file($tmp_img, $dir_img);
     // };
 
     // RECEBER OS DADOS DO FORMULÁRIO
@@ -20,7 +20,7 @@ if ($_POST) {
     $cnpj = $_POST['cnpj'];
     $cpf = $_POST['cpf'];
     $descricao = $_POST['descricao'];
-   
+
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO ongs
                     ( nome, cnpj, cpf, descricao, imagem_ong)
@@ -28,6 +28,7 @@ if ($_POST) {
                     ('$nome', '$cnpj', '$cpf', '$descricao', '$nome_img')
                     ";
     $resultado = $conn->query($insertSQL);
+
 }
 ?>
 <!DOCTYPE html>

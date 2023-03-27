@@ -1,7 +1,7 @@
 <?php
 include "conn/connect.php";
 
-$listaProGeral = $conn->query("select * from ongs where id");
+$listaProGeral = $conn->query("SELECT * FROM ongs WHERE id");
 $rowProGeral = $listaProGeral->fetch_assoc();
 $nRows = $listaProGeral->num_rows;
 ?>
@@ -30,7 +30,7 @@ $nRows = $listaProGeral->num_rows;
                     <!-- descricao -->
                     <p class="card-text"><?php echo $rowProGeral['descricao']; ?></p>
                     <!-- botao -->
-                    <a href="#" class="btn btn-danger">Saiba Mais</a>
+                    <a href="saiba_mais_ong.php?id=<?php echo $rowProGeral['id']; ?>" class="btn btn-danger">Saiba Mais</a>
                 </div>
             </div>
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
