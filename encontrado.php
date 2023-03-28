@@ -1,9 +1,10 @@
 <?php
 // Incluir arquivo para fazer a conexão
 include("conn/connect.php");
-$id = $_GET['id'];
+//$id = $_GET['id'];
+
 // Consulta para trazer os dados e se necessário filtrar
-$lista_destaque      =   $conn->query("SELECT * FROM animais WHERE id = $id;");
+$lista_destaque      =   $conn->query("SELECT * FROM animais_ap WHERE id");
 $row_destaque        =   $lista_destaque->fetch_assoc();
 $totalRows_destaque  =   ($lista_destaque)->num_rows;
 ?>
@@ -11,7 +12,7 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
 <html lang="pt-BR">
 
 <head>
-    <title>Detalhes dos Animais</title>
+    <title>Detalhes dos Animal</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -28,7 +29,7 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                 <div class="col-sm-12 col-md-12 ">
                     <!-- dimensionamento -->
                     <div class="card">
-                        <a href="saiba_mais_animais.php?id=<?php echo $row_destaque['id']; ?>">
+                        <a href="encontrado.php?id=<?php echo $row_destaque['id']; ?>">
                             <img src="images/<?php echo $row_destaque['imagem_animal']; ?>" alt="" class="rounded mx-auto d-block" style="height: 20em;">
                         </a>
                         <br>
@@ -36,13 +37,13 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                             <h3 class="text">
                                 <strong><?php echo $row_destaque['nome']; ?></strong>
                             </h3>
-                            <p class="text">
-                                <strong>Descriçao: <?php echo $row_destaque['especie']; ?></strong>
+                            <p class="text"> Espécie:
+                                <?php echo $row_destaque['especie']; ?>
                             </p>
-                            <p class="text">Raça:
+                            <p class="text"> Raça:
                                 <?php echo $row_destaque['raca_id']; ?>
                             </p>
-                            <p class="text">Sexo:
+                            <p class="text"> Sexo:
                                 <?php echo $row_destaque['sexo']; ?>
                             </p>
                             <p class="text">Porte:
@@ -60,11 +61,8 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                             <p class="text">Medicamentos:
                                 <?php echo $row_destaque['medicamentos']; ?>
                             </p>
-                            <p class="text">Vacinas:
-                                <?php echo $row_destaque['vacinas']; ?>
-                            </p>
-                            <p class="text">Comportamento:
-                                <?php echo $row_destaque['comportamento']; ?>
+                            <p class="text">Visto por último:
+                                <?php echo $row_destaque['localizacao']; ?>
                             </p>
                             <p class="text">Telefone:
                                 <?php echo $row_destaque['telefone']; ?>

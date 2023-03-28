@@ -25,20 +25,20 @@ if ($_POST) {
     $descricao = $_POST['descricao'];
     $enfermidades = $_POST['enfermidades'];
     $medicamentos = $_POST['medicamentos'];
-    $vacinas = $_POST['vacinas'];
-    $comportamento = $_POST['comportamento'];
+    $localizacao = $_POST['localizacao'];
     $telefone = $_POST['telefone'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
-    $insertSQL = "INSERT INTO animais
+    $insertSQL = "INSERT INTO animais_ap
                     ( nome, especie, raca_id, sexo, porte, idade, descricao,
-                    enfermidades, medicamentos, vacinas, comportamento, telefone, imagem_animal)
+                    enfermidades, medicamentos, localizacao, telefone, imagem_animal)
                     VALUES
                     ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$telefone', '$nome_img' )
+                    '$enfermidades', '$medicamentos', '$localizacao', '$telefone', '$nome_img' )
                     ";
     $resultado = $conn->query($insertSQL);
 }
+
 // SELECIONAR OS DADOS DA CHAVE ESTRANGEIRA
 $consulta_fk    =   "SELECT * FROM raca ORDER BY nome ASC ";
 $lista_fk       =   $conn->query($consulta_fk);
@@ -53,7 +53,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Adoção - ONG</title>
+    <title>Formulario de Achados e Perdidos</title>
     <!-- LINKS BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/bootstrap.css">
@@ -68,10 +68,10 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
         <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4 p-4">
             <div class="mb-4 d-flex justify-content-start align-items-center">
                 <!-- TÍTULO -->
-                <h4>Formulario de Adoção</h4>
+                <h4>Formulario de Achados e Perdidos</h4>
             </div>
             <div class="mb-1">
-                <form id="formulario" method="post" action="adocao_insere.php" enctype="multipart/form-data">
+                <form id="formulario" method="post" action="a&p_insere.php" enctype="multipart/form-data">
                     <!-- NOME -->
                     <div class="mb-4">
                         <div>
@@ -88,7 +88,7 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     <!-- RAÇA -->
                     <div class="mb-4">
                         <label for="raca_id">Raça:</label>
-                        <select class="form-select" aria-label="Default select example" name="raca_id" id="raca_id" required>
+                        <select class="form-select" aria-label="Default select example" name="raca_id" id="raca_id">
                             <option selected>Selecione a raça do animal</option>
                             <!-- Abre estrutura de repetição -->
                             <?php do { ?>
@@ -108,21 +108,21 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     <div class="mb-4">
                         <label for="sexo">Sexo:</label><br>
                         <input type="radio" class="form-check-input" name="sexo" value="Macho"> Macho
-                        <input type="radio" class="form-check-input" name="sexo" value="Fêmea"> Fêmea
+                        <input type="radio" class="form-check-input" name="sexo" value="Femea"> Fêmea
                     </div>
                     <!-- PORTE -->
                     <div class="mb-4">
                         <label for="porte">Porte:</label><br>
-                        <input type="radio" class="form-check-input" name="porte" value="Pequeno"> Pequeno
-                        <input type="radio" class="form-check-input" name="porte" value="Médio"> Médio
-                        <input type="radio" class="form-check-input" name="porte" value="Grande"> Grande
+                        <input type="radio" class="form-check-input" name="porte" value="pequeno"> Pequeno
+                        <input type="radio" class="form-check-input" name="porte" value="medio"> Médio
+                        <input type="radio" class="form-check-input" name="porte" value="grande"> Grande
                     </div>
                     <!-- IDADE -->
                     <div class="mb-4">
                         <label for="idade">Idade:</label><br>
-                        <input type="radio" class="form-check-input" name="idade" value="Filhote"> Filhote
-                        <input type="radio" class="form-check-input" name="idade" value="Adulto"> Adulto
-                        <input type="radio" class="form-check-input" name="idade" value="Idoso"> Idoso
+                        <input type="radio" class="form-check-input" name="idade" value="filhote"> Filhote
+                        <input type="radio" class="form-check-input" name="idade" value="adulto"> Adulto
+                        <input type="radio" class="form-check-input" name="idade" value="idoso"> Idoso
                     </div>
                     <!-- CARACT. FÍSICAS -->
                     <div class="mb-4">
@@ -139,21 +139,17 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                         <label for="medicamentos">Toma algum tipo de medicação?</label>
                         <input type="text" class="form-control" name="medicamentos" id="medicamentos" placeholder="Digite qual se houver" required>
                     </div>
-                    <!-- VACINAS -->
+                    <!-- LOCALIZAÇAO -->
                     <div class="mb-4">
-                        <label for="vacinas">Vacinas recebidas:</label>
-                        <input type="text" class="form-control" name="vacinas" id="medicacao" placeholder="Digite qual se houver" required>
-                    </div>
-                    <!-- COMPORTAMENTO -->
-                    <div class="mb-4">
-                        <label for="comportamento" required>Comportamento:</label>
-                        <textarea name="comportamento" id="comportamento" class="form-control" placeholder="Ex: personalidade, hábitos, preferências, etc."></textarea>
+                        <label for="localizacao" required>Visto por último:</label>
+                        <textarea name="localizacao" id="localizacao" class="form-control" placeholder="Ex: Onde foi visto pela última vez, horário"></textarea>
                     </div>
                     <!-- TELEFONE -->
                     <div class="mb-4">
-                        <label for="telefone">Telefone:</label>
-                        <input name="telefone" id="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
+                        <label for="telefone">Telefone para contato:</label>
+                        <input type="text" class="form-control" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx" required>
                     </div>
+
                     <!-- IMAGEM -->
                     <div class="mb-4">
                         <label for="imagem_animal" class="form-label">Imagem do animal:</label>

@@ -84,22 +84,22 @@ if ($_POST) {
                     <!-- LOGRADOURO -->
                     <div class="mb-4">
                         <label for="logradouro">Logradouro:</label>
-                        <textarea name="logradouro" id="logradouro" class="form-control"></textarea>
+                        <input name="logradouro" id="logradouro" class="form-control">
                     </div>
                     <!-- NÚMERO -->
                     <div class="mb-4">
                         <label for="num">Número:</label>
-                        <textarea name="num" id="num" class="form-control"></textarea>
+                        <input name="num" id="num" class="form-control">
                     </div>
                     <!-- BAIRRO -->
                     <div class="mb-4">
                         <label for="bairro">Bairro:</label>
-                        <textarea name="bairro" id="bairro" class="form-control"></textarea>
+                        <input name="bairro" id="bairro" class="form-control">
                     </div>
                     <!-- TELEFONE -->
                     <div class="mb-4">
                         <label for="telefone">Telefone:</label>
-                        <textarea name="telefone" id="telefone" class="form-control"></textarea>
+                        <input name="telefone" id="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">

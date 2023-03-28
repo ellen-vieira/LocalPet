@@ -37,10 +37,37 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                                 <strong><?php echo $row_destaque['nome']; ?></strong>
                             </h3>
                             <p class="text">
-                                <strong><?php echo $row_destaque['descricao']; ?></strong>
+                                <strong>Descriçao: <?php echo $row_destaque['especie']; ?></strong>
                             </p>
-                            <p class="text">
+                            <p class="text">Raça:
+                                <?php echo $row_destaque['raca_id']; ?>
+                            </p>
+                            <p class="text">Sexo:
+                                <?php echo $row_destaque['sexo']; ?>
+                            </p>
+                            <p class="text">Porte:
+                                <?php echo $row_destaque['porte']; ?>
+                            </p>
+                            <p class="text">Idade:
+                                <?php echo $row_destaque['idade']; ?>
+                            </p>
+                            <p class="text">Descrição:
+                                <?php echo $row_destaque['descricao']; ?>
+                            </p>
+                            <p class="text">Enfermidades:
+                                <?php echo $row_destaque['enfermidades']; ?>
+                            </p>
+                            <p class="text">Medicamentos:
+                                <?php echo $row_destaque['medicamentos']; ?>
+                            </p>
+                            <p class="text">Vacinas:
+                                <?php echo $row_destaque['vacinas']; ?>
+                            </p>
+                            <p class="text">Comportamento:
                                 <?php echo $row_destaque['comportamento']; ?>
+                            </p>
+                            <p class="text">Telefone:
+                                <?php echo $row_destaque['telefone']; ?>
                             </p>
                         </div><!-- fecha caption -->
                     </div><!-- fecha thumbnail -->

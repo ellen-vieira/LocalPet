@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais` (
   `medicamentos` VARCHAR(100) NULL DEFAULT NULL,
   `vacinas` VARCHAR(45) NULL DEFAULT NULL,
   `comportamento` VARCHAR(200) NULL DEFAULT NULL,
+  `telefone` VARCHAR(45) NOT NULL,
   `imagem_animal` VARCHAR(45) NOT NULL,
   `ativo` BIT(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
@@ -92,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`usuarios` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 15
+AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -148,15 +149,15 @@ DEFAULT CHARACTER SET = utf8mb4;
 CREATE TABLE IF NOT EXISTS `db_localpet`.`animais_ap` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  `especie` VARCHAR(50) NOT NULL,
+  `especie` VARCHAR(100) NOT NULL,
   `raca_id` INT(11) NOT NULL,
   `sexo` VARCHAR(45) NOT NULL,
   `porte` VARCHAR(45) NOT NULL,
   `idade` VARCHAR(45) NULL DEFAULT NULL,
-  `descricao` VARCHAR(100) NOT NULL,
-  `enfermidades` VARCHAR(100) NULL DEFAULT NULL,
-  `medicamentos` VARCHAR(100) NULL DEFAULT NULL,
-  `localizacao` VARCHAR(100) NOT NULL,
+  `descricao` VARCHAR(45) NOT NULL,
+  `enfermidades` VARCHAR(45) NULL DEFAULT NULL,
+  `medicamentos` VARCHAR(45) NULL DEFAULT NULL,
+  `localizacao` VARCHAR(45) NOT NULL,
   `telefone` VARCHAR(11) NOT NULL,
   `imagem_animal` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`),
@@ -206,10 +207,10 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`ongs` (
   `cpf` INT(11) NULL DEFAULT NULL,
   `descricao` VARCHAR(255) NOT NULL,
   `logradouro` VARCHAR(100) NOT NULL,
-  `imagem_ong` VARCHAR(45) NOT NULL,
   `num` VARCHAR(45) NULL DEFAULT NULL,
   `bairro` VARCHAR(45) NULL DEFAULT NULL,
   `telefone` VARCHAR(45) NULL DEFAULT NULL,
+  `imagem_ong` VARCHAR(45) NOT NULL,
   `usuario_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_ongs_usuario1_idx` (`usuario_id` ASC) ,
@@ -219,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`ongs` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 7
+AUTO_INCREMENT = 8
 DEFAULT CHARACTER SET = utf8mb4;
 
 

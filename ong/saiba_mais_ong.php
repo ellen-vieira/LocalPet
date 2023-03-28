@@ -38,8 +38,18 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                             <p class="text">
                                 <strong><?php echo $row_destaque['descricao']; ?></strong>
                             </p>
-                            <p class="text">
+                            <h5>Endereço:</h5>
+                            <p class="text">Logradouro:
                                 <?php echo $row_destaque['logradouro']; ?>
+                            </p>
+                            <p class="text">Número:
+                                <?php echo $row_destaque['num']; ?>
+                            </p>
+                            <p class="text">Bairro:
+                                <?php echo $row_destaque['bairro']; ?>
+                            </p>
+                            <p class="text">Telefone:
+                                <?php echo $row_destaque['telefone']; ?>
                             </p>
                         </div><!-- fecha caption -->
                     </div><!-- fecha thumbnail -->

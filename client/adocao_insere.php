@@ -27,14 +27,15 @@ if ($_POST) {
     $medicamentos = $_POST['medicamentos'];
     $vacinas = $_POST['vacinas'];
     $comportamento = $_POST['comportamento'];
+    $telefone = $_POST['telefone'];
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO animais
                     ( nome, especie, raca_id, sexo, porte, idade, descricao,
-                    enfermidades, medicamentos, vacinas, comportamento, imagem_animal)
+                    enfermidades, medicamentos, vacinas, comportamento, telefone, imagem_animal)
                     VALUES
                     ('$nome', '$especie' ,$raca_id, '$sexo', '$porte', '$idade', '$descricao',
-                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$nome_img' )
+                    '$enfermidades', '$medicamentos', '$vacinas', '$comportamento' , '$telefone', '$nome_img' )
                     ";
     var_dump($insertSQL);
     $resultado = $conn->query($insertSQL);
@@ -148,6 +149,11 @@ $totalRows_fk   =   ($lista_fk)->num_rows;
                     <div class="mb-4">
                         <label for="comportamento" required>Comportamento:</label>
                         <textarea name="comportamento" id="comportamento" class="form-control" placeholder="Ex: personalidade, hábitos, preferências, etc."></textarea>
+                    </div>
+                    <!-- TELEFONE -->
+                    <div class="mb-4">
+                        <label for="telefone">Telefone:</label>
+                        <input name="telefone" id="telefone" class="form-control" placeholder="(xx) xxxxx-xxxx">
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">
