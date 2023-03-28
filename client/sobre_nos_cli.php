@@ -8,12 +8,12 @@
   <!-- TITULO -->
   <title>Local Pet</title>
   <!-- LINK BOOTSTRAP -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
   <!-- ICON -->
-  <link rel="icon" type="images/localpet.png" href="images/favicon.png" />
+  <link rel="icon" type="../images/localpet.png" href="../images/favicon.png" />
   <!-- DA ONDE VEM A COR DA HEADER -->
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
   <!-- ESTILO HEADER -->
   <style>
     .bd-placeholder-img {
@@ -71,7 +71,7 @@
 
 <body id="corpo">
 
-  <?php include 'header.php'; ?>
+  <?php include 'header_cli.php'; ?>
 
   <div class="container marketing">
   </div>
@@ -98,42 +98,42 @@
     <!-- IMAGENS -->
     <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/yusuke.png">
+        <img class="img-fluid" src="../images/yusuke.png">
         <br><br>
         <div class="work-info">
           <h3>Yusuke</h3>
         </div>
       </div>
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/pandora.png">
+        <img class="img-fluid" src="../images/pandora.png">
         <br><br>
         <div class="work-info">
           <h3>Pandora</h3>
         </div>
       </div>
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/sanji.png">
+        <img class="img-fluid" src="../images/sanji.png">
         <br><br>
         <div class="work-info">
           <h3>Sanji</h3>
         </div>
       </div>
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/luffy.png">
+        <img class="img-fluid" src="../images/luffy.png">
         <br><br>
         <div class="work-info">
           <h3>Luffy</h3>
         </div>
       </div>
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/rajado.png">
+        <img class="img-fluid" src="../images/rajado.png">
         <br><br>
         <div class="work-info">
           <h3>Rajado</h3>
         </div>
       </div>
       <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-        <img class="img-fluid" src="images/bem.png">
+        <img class="img-fluid" src="../images/bem.png">
         <br><br>
         <div class="work-info">
           <h3>Bem</h3>
@@ -153,7 +153,7 @@
 
   <!-- SCRIPT -->
   <script src="https://cdn.lordicon.com/ritcuqlt.js%22%3E"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="../js/bootstrap.bundle.min.js"></script>
 
 
 </body>
