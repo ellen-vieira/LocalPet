@@ -207,7 +207,7 @@
 
     <!-- RODAPÉ -->
     <footer class="container">
-      <p class="float-end"><a href="#">Voltar</a></p>
+    <p class="float-end btn btn-danger "><a href="#">Voltar</a></p>
       <p>&copy; 2023-Meraki, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
   </main>
