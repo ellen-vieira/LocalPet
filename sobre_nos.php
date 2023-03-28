@@ -8,12 +8,12 @@
   <!-- TITULO -->
   <title>Local Pet</title>
   <!-- LINK BOOTSTRAP -->
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/headers/">
   <!-- ICON -->
-  <link rel="icon" type="images/localpet.png" href="../images/favicon.png" />
+  <link rel="icon" type="images/localpet.png" href="images/favicon.png" />
   <!-- DA ONDE VEM A COR DA HEADER -->
-  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
   <!-- ESTILO HEADER -->
   <style>
     .bd-placeholder-img {
@@ -150,7 +150,7 @@
 
   <!-- SCRIPT -->
   <script src="https://cdn.lordicon.com/ritcuqlt.js%22%3E"></script>
-  <script src="../js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 
 </body>

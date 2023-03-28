@@ -158,11 +158,11 @@
       <hr class="featurette-divider">
 
       <div class="row featurette">
-      <a name = "carousel">&nbsp;</a>
+        <a name="carousel">&nbsp;</a>
         <div class="col-md-7">
           <h2 class="featurette-heading fw-normal lh-1">Quem Somos? Somos a LocalPet! <span class="text-muted"><br> Parceiros das ONGs que regatam animais em situação de rua.</span></h2>
           <p class="lead">Nosso site tem parceiria com várias ONGs para você que quer adotar um Pet, fazer doação para uma ONG cadastrada ou até mesmo encontrar o seu Pet perdido.</p>
-       <!-- BOTÃO -->
+          <!-- BOTÃO -->
           <a class="btn btn-danger" href="sobre_nos_login.php" role="button">SAIBA MAIS</a>
         </div>
         <div class="col-md-5">
@@ -178,8 +178,8 @@
         <div class="col-md-7 order-md-2">
           <h2 class="featurette-heading fw-normal lh-1">Seu Pet se perdeu? <span class="text-muted">Nos te ajudamos na procura do seu Pet perdido.</span></h2>
           <p class="lead">Encontre seu pet perdido com campanhas de marketing inteligente via Instagram e Facebook. Perdeu seu cachorro ou gato? Divulgue agora!</p>
-         <!-- BOTÃO -->
-           <a class="btn btn-danger" href="a&p_login.php" role="button">SAIBA MAIS</a>
+          <!-- BOTÃO -->
+          <a class="btn btn-danger" href="a&p_login.php" role="button">SAIBA MAIS</a>
         </div>
         <div class="col-md-5 order-md-1">
           <img src="../images/A&P.png" alt="" width="500" height="500">
@@ -213,8 +213,10 @@
 
     <!-- RODAPÉ -->
     <footer class="container">
-      <p class="float-end btn btn-danger "><a href="#">Voltar</a></p>
-
+      <!-- BOTÂO VOLTAR -->
+      <div class="text-end">
+        <a href="#" class="btn btn-danger btn-block">Voltar</a>
+      </div>
       <p>&copy; 2023-Meraki, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
     </footer>
   </main>

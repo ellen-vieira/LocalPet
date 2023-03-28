@@ -36,7 +36,7 @@ $nRows = $listaProGeral->num_rows;
                     <!-- raça -->
                     <p class="card-text"><?php echo $rowProGeral['sexo']; ?></p>
                     <!-- botao -->
-                    <a href="#" class="btn btn-danger">Saiba Mais</a>
+                    <a href="saiba_mais_animais.php?id=<?php echo $rowProGeral['id']; ?>" class="btn btn-danger">Saiba Mais</a>
                 </div>
             </div>
         <?php } while ($rowProGeral = $listaProGeral->fetch_assoc()); ?> <!-- Final da estrutura de repetição -->
