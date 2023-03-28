@@ -20,12 +20,17 @@ if ($_POST) {
     $cnpj = $_POST['cnpj'];
     $cpf = $_POST['cpf'];
     $descricao = $_POST['descricao'];
+    $logradouro = $_POST['logradouro'];
+    $num = $_POST['num'];
+    $bairro = $_POST['bairro'];
+    $telefone = $_POST['telefone'];
+
 
     // CONSULTA SQL PARA INSERÇÃO DE DADOS
     $insertSQL = "INSERT INTO ongs
-                    ( nome, cnpj, cpf, descricao, imagem_ong)
+                    ( nome, cnpj, cpf, descricao, logradouro, num, bairro, telefone, imagem_ong)
                     VALUES
-                    ('$nome', '$cnpj', '$cpf', '$descricao', '$nome_img')
+                    ('$nome', '$cnpj', '$cpf', '$descricao', '$logradouro', '$num', '$bairro', '$telefone', '$nome_img')
                     ";
     $resultado = $conn->query($insertSQL);
 }
@@ -74,6 +79,27 @@ if ($_POST) {
                     <div class="mb-4">
                         <label for="descricao">Descrição:</label>
                         <textarea name="descricao" id="descricao" class="form-control"></textarea>
+                    </div>
+                    <h4>Endereço:</h4>
+                    <!-- LOGRADOURO -->
+                    <div class="mb-4">
+                        <label for="logradouro">Logradouro:</label>
+                        <textarea name="logradouro" id="logradouro" class="form-control"></textarea>
+                    </div>
+                    <!-- NÚMERO -->
+                    <div class="mb-4">
+                        <label for="num">Número:</label>
+                        <textarea name="num" id="num" class="form-control"></textarea>
+                    </div>
+                    <!-- BAIRRO -->
+                    <div class="mb-4">
+                        <label for="bairro">Bairro:</label>
+                        <textarea name="bairro" id="bairro" class="form-control"></textarea>
+                    </div>
+                    <!-- TELEFONE -->
+                    <div class="mb-4">
+                        <label for="telefone">Telefone:</label>
+                        <textarea name="telefone" id="telefone" class="form-control"></textarea>
                     </div>
                     <!-- IMAGEM -->
                     <div class="mb-4">

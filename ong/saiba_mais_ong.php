@@ -39,7 +39,7 @@ $totalRows_destaque  =   ($lista_destaque)->num_rows;
                                 <strong><?php echo $row_destaque['descricao']; ?></strong>
                             </p>
                             <p class="text">
-                                <?php echo $row_destaque['endereco']; ?>
+                                <?php echo $row_destaque['logradouro']; ?>
                             </p>
                         </div><!-- fecha caption -->
                     </div><!-- fecha thumbnail -->
