@@ -2,7 +2,7 @@
 <?php
 include "../conn/connect.php";
 
-$listaProGeral = $conn->query("select * from animais where id");
+$listaProGeral = $conn->query("select * from animais_ap where id");
 $rowProGeral = $listaProGeral->fetch_assoc();
 $nRows = $listaProGeral->num_rows;
 ?>
