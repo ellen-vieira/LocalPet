@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`usuarios` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 13
+AUTO_INCREMENT = 14
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -152,12 +152,13 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais_ap` (
   `raca_id` INT(11) NOT NULL,
   `sexo` VARCHAR(45) NOT NULL,
   `porte` VARCHAR(45) NOT NULL,
-  `idade` VARCHAR(45) NULL,
+  `idade` VARCHAR(45) NULL DEFAULT NULL,
   `descricao` VARCHAR(45) NOT NULL,
   `enfermidades` VARCHAR(45) NULL DEFAULT NULL,
   `medicamentos` VARCHAR(45) NULL DEFAULT NULL,
   `localizacao` VARCHAR(45) NOT NULL,
   `telefone` VARCHAR(11) NOT NULL,
+  `imagem_animal` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_animais_ap_raca1_idx` (`raca_id` ASC) ,
   CONSTRAINT `fk_animais_ap_raca1`
