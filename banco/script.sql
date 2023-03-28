@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais` (
   `imagem_animal` VARCHAR(45) NOT NULL,
   `ativo` BIT(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`id`),
-  INDEX `fk_animais_raca1_idx` (`raca_id` ASC) VISIBLE,
+  INDEX `fk_animais_raca1_idx` (`raca_id` ASC) ,
   CONSTRAINT `fk_animais_raca1`
     FOREIGN KEY (`raca_id`)
     REFERENCES `db_localpet`.`raca` (`id`)
@@ -83,9 +83,9 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`usuarios` (
   `senha` VARCHAR(32) NOT NULL,
   `nivel_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  INDEX `fk_usuarios_niveis1_idx` (`nivel_id` ASC) VISIBLE,
+  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
+  INDEX `fk_usuarios_niveis1_idx` (`nivel_id` ASC) ,
   CONSTRAINT `fk_usuarios_niveis1`
     FOREIGN KEY (`nivel_id`)
     REFERENCES `db_localpet`.`nivel` (`id`)
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`clientes` (
   `email` VARCHAR(45) NULL DEFAULT NULL,
   `usuarios_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_clientes_usuarios1_idx` (`usuarios_id` ASC) VISIBLE,
+  INDEX `fk_clientes_usuarios1_idx` (`usuarios_id` ASC) ,
   CONSTRAINT `fk_clientes_usuarios1`
     FOREIGN KEY (`usuarios_id`)
     REFERENCES `db_localpet`.`usuarios` (`id`)
@@ -126,8 +126,8 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`adocoes` (
   `animais_id` INT(11) NOT NULL,
   `clientes_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_Adocoes_animais1_idx` (`animais_id` ASC) VISIBLE,
-  INDEX `fk_Adocoes_clientes1_idx` (`clientes_id` ASC) VISIBLE,
+  INDEX `fk_Adocoes_animais1_idx` (`animais_id` ASC) ,
+  INDEX `fk_Adocoes_clientes1_idx` (`clientes_id` ASC) ,
   CONSTRAINT `fk_Adocoes_animais1`
     FOREIGN KEY (`animais_id`)
     REFERENCES `db_localpet`.`animais` (`id`)
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais_ap` (
   `localizacao` VARCHAR(45) NOT NULL,
   `telefone` VARCHAR(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_animais_ap_raca1_idx` (`raca_id` ASC) VISIBLE,
+  INDEX `fk_animais_ap_raca1_idx` (`raca_id` ASC) ,
   CONSTRAINT `fk_animais_ap_raca1`
     FOREIGN KEY (`raca_id`)
     REFERENCES `db_localpet`.`raca` (`id`)
@@ -177,8 +177,8 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais_cli` (
   `clientes_id` INT(11) NOT NULL,
   `animais_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_animais_cli_animais1_idx` (`animais_id` ASC) VISIBLE,
-  INDEX `fk_animais_cli_clientes1_idx` (`clientes_id` ASC) VISIBLE,
+  INDEX `fk_animais_cli_animais1_idx` (`animais_id` ASC) ,
+  INDEX `fk_animais_cli_clientes1_idx` (`clientes_id` ASC) ,
   CONSTRAINT `fk_animais_cli_animais1`
     FOREIGN KEY (`animais_id`)
     REFERENCES `db_localpet`.`animais` (`id`)
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`ongs` (
   `imagem_ong` VARCHAR(45) NOT NULL,
   `usuario_id` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_ongs_usuario1_idx` (`usuario_id` ASC) VISIBLE,
+  INDEX `fk_ongs_usuario1_idx` (`usuario_id` ASC) ,
   CONSTRAINT `fk_ongs_usuario1`
     FOREIGN KEY (`usuario_id`)
     REFERENCES `db_localpet`.`usuarios` (`id`)
@@ -225,8 +225,8 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`animais_ong` (
   `ongs_id` INT(11) NOT NULL,
   `animais_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_animais_ong_ongs1_idx` (`ongs_id` ASC) VISIBLE,
-  INDEX `fk_animais_ong_animais1_idx` (`animais_id` ASC) VISIBLE,
+  INDEX `fk_animais_ong_ongs1_idx` (`ongs_id` ASC) ,
+  INDEX `fk_animais_ong_animais1_idx` (`animais_id` ASC) ,
   CONSTRAINT `fk_animais_ong_animais1`
     FOREIGN KEY (`animais_id`)
     REFERENCES `db_localpet`.`animais` (`id`)
@@ -257,7 +257,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`endereco_cli` (
   `tipo` VARCHAR(30) NOT NULL,
   `clientes_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_endereco_cli_clientes1_idx` (`clientes_id` ASC) VISIBLE,
+  INDEX `fk_endereco_cli_clientes1_idx` (`clientes_id` ASC) ,
   CONSTRAINT `fk_endereco_cli_clientes1`
     FOREIGN KEY (`clientes_id`)
     REFERENCES `db_localpet`.`clientes` (`id`)
@@ -283,7 +283,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`endereco_ong` (
   `tipo` VARCHAR(30) NOT NULL,
   `ongs_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_endereco_ong_ongs1_idx` (`ongs_id` ASC) VISIBLE,
+  INDEX `fk_endereco_ong_ongs1_idx` (`ongs_id` ASC) ,
   CONSTRAINT `fk_endereco_ong_ongs1`
     FOREIGN KEY (`ongs_id`)
     REFERENCES `db_localpet`.`ongs` (`id`)
@@ -302,7 +302,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`telefone_cli` (
   `tipo` VARCHAR(10) NOT NULL,
   `clientes_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_telefone_clientes1_idx` (`clientes_id` ASC) VISIBLE,
+  INDEX `fk_telefone_clientes1_idx` (`clientes_id` ASC) ,
   CONSTRAINT `fk_telefone_clientes1`
     FOREIGN KEY (`clientes_id`)
     REFERENCES `db_localpet`.`clientes` (`id`)
@@ -321,7 +321,7 @@ CREATE TABLE IF NOT EXISTS `db_localpet`.`telefone_ong` (
   `tipo` VARCHAR(10) NOT NULL,
   `ongs_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_telefone_ong_ongs1_idx` (`ongs_id` ASC) VISIBLE,
+  INDEX `fk_telefone_ong_ongs1_idx` (`ongs_id` ASC) ,
   CONSTRAINT `fk_telefone_ong_ongs1`
     FOREIGN KEY (`ongs_id`)
     REFERENCES `db_localpet`.`ongs` (`id`)
