@@ -3,7 +3,7 @@
 include("../conn/connect.php");
 $id = $_GET['id'];
 // Consulta para trazer os dados e se necessário filtrar
-$lista_destaque      =   $conn->query("SELECT * FROM animais WHERE id = $id;");
+$lista_destaque      =   $conn->query("SELECT * FROM animais WHERE id = $id");
 $row_destaque        =   $lista_destaque->fetch_assoc();
 $totalRows_destaque  =   ($lista_destaque)->num_rows;
 ?>
